@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1001,
+    "title": "Login Issues - Can't Access Account",
+    "description": "Customer is unable to log in to their account. They've tried resetting their password multiple times but still cannot gain access.",
+    "priority": "HIGH",
+    "customer": "Michael Brown",
+    "createdAt": "2025-01-17",
+    "status": "Open"
+  },
+  {
+    "id": 1002,
+    "title": "Payment Failure - Card Declined",
+    "description": "Customer reports that their payment is being declined despite sufficient funds. They have tried multiple cards without success.",
+    "priority": "HIGH",
+    "customer": "Sophia Johnson",
+    "createdAt": "2025-02-04",
+    "status": "Open"
+  },
+  {
+    "id": 1003,
+    "title": "Refund Not Processed",
+    "description": "Customer requested a refund two weeks ago and has not received confirmation or the refund amount.",
+    "priority": "MEDIUM",
+    "customer": "Ethan Wilson",
+    "createdAt": "2025-02-11",
+    "status": "Open"
+  },
+  {
+    "id": 1004,
+    "title": "Incorrect Billing Address",
+    "description": "The customer’s invoice shows an incorrect billing address. They are unable to update it in the billing section.",
+    "priority": "LOW",
+    "customer": "Ava Martinez",
+    "createdAt": "2025-03-19",
+    "status": "Open"
+  },
+  {
+    "id": 1005,
+    "title": "Unable to Update Profile Picture",
+    "description": "Customer reports that uploading a new profile picture shows an error message 'File type not supported' despite using a valid JPG file.",
+    "priority": "LOW",
+    "customer": "Liam Anderson",
+    "createdAt": "2025-03-25",
+    "status": "Open"
+  },
+  {
+    "id": 1006,
+    "title": "Mobile App Crashing on Launch",
+    "description": "App crashes immediately after opening on Android 13 devices. Reinstallation did not help.",
+    "priority": "HIGH",
+    "customer": "Isabella Davis",
+    "createdAt": "2025-04-10",
+    "status": "Open"
+  },
+  {
+    "id": 1007,
+    "title": "Two-Factor Authentication Not Working",
+    "description": "Customer not receiving the 2FA verification code on their registered email address.",
+    "priority": "HIGH",
+    "customer": "Noah Thompson",
+    "createdAt": "2025-04-22",
+    "status": "Open"
+  },
+  {
+    "id": 1008,
+    "title": "Delayed Order Confirmation Email",
+    "description": "Customer completed checkout but did not receive the order confirmation email within 24 hours.",
+    "priority": "MEDIUM",
+    "customer": "Emma Garcia",
+    "createdAt": "2025-05-03",
+    "status": "Open"
+  },
+  {
+    "id": 1009,
+    "title": "Subscription Auto-Renewal Issue",
+    "description": "Customer cancelled subscription before renewal date but was still charged for the next month.",
+    "priority": "MEDIUM",
+    "customer": "Oliver Taylor",
+    "createdAt": "2025-05-15",
+    "status": "Open"
+  },
+  {
+    "id": 1010,
+    "title": "Password Reset Email Not Received",
+    "description": "Customer requested a password reset but did not receive the reset email after multiple attempts.",
+    "priority": "LOW",
+    "customer": "Amelia White",
+    "createdAt": "2025-06-01",
+    "status": "Open"
+  },
+  {
+    "id": 1011,
+    "title": "App Login Timeout",
+    "description": "Customer reports that the login process takes too long and times out even with a stable internet connection.",
+    "priority": "MEDIUM",
+    "customer": "James Rodriguez",
+    "createdAt": "2025-06-10",
+    "status": "Open"
+  },
+  {
+    "id": 1012,
+    "title": "Cannot Download Invoice",
+    "description": "Customer unable to download the latest invoice from the billing section. The 'Download' button is unresponsive.",
+    "priority": "LOW",
+    "customer": "Charlotte Perez",
+    "createdAt": "2025-07-05",
+    "status": "Open"
+  },
+  {
+    "id": 1013,
+    "title": "Account Suspended by Mistake",
+    "description": "Customer claims their account was suspended without any policy violation. They want it reactivated urgently.",
+    "priority": "HIGH",
+    "customer": "Benjamin Lee",
+    "createdAt": "2025-07-22",
+    "status": "Open"
+  },
+  {
+    "id": 1014,
+    "title": "Coupon Code Not Applying",
+    "description": "Customer tried applying a valid coupon code during checkout but the discount was not reflected.",
+    "priority": "LOW",
+    "customer": "Mia Gonzalez",
+    "createdAt": "2025-08-03",
+    "status": "Open"
+  },
+  {
+    "id": 1015,
+    "title": "Live Chat Support Not Loading",
+    "description": "Customer reports that the live chat window keeps spinning and does not connect to an agent.",
+    "priority": "MEDIUM",
+    "customer": "Lucas Walker",
+    "createdAt": "2025-08-19",
+    "status": "Open"
+  }
+]

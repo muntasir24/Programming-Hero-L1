@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+ @plugin "daisyui" {
+   themes: light --default;
+ }
+ 
+ html{
+  background-color: #F9F6F3;
+ }
