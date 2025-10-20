@@ -1,15 +1,19 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router';
+import { Link} from 'react-router';
 import ProductCard from '../../Components/productcard/ProductCard';
 import useProducts from '../../Hooks/useProducts';
 
 const Home = () => {
-    const data = useLoaderData();
-    const hookData = useProducts();
-    console.log(hookData);
-    const fetureData = data.slice(0, 6);
-    console.log(fetureData);
+    // const data = useLoaderData();
+    const { products,  Loading } = useProducts();
+   
+    console.log(products);
+    const fetureData = products.slice(0, 6);
+    // console.log(fetureData);
     // console.log(data);
+    if (Loading) {
+      return <p className="text-center py-10">Loading...</p>;
+    }
 
     return (
         <div>
