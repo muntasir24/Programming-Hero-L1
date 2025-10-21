@@ -1,0 +1,272 @@
+[
+  {
+    "image": "https://i.ibb.co.com/PGbg5XgJ/Spotify.png",
+    "title": "Spotify",
+    "companyName": "Spotify AB",
+    "id": 1,
+    "description": "Spotify is a globally recognized music streaming service offering millions of songs, albums, and podcasts. With its sleek interface and AI-powered recommendations, it lets you create custom playlists, share music, and explore new artists. Offline playback, device sync, and cross-platform access make it ideal for every music lover. Spotify Premium removes ads and provides uninterrupted listening, making it one of the best entertainment apps for audiophiles worldwide.",
+    "size": 82,
+    "reviews": 8340,
+    "ratingAvg": 4.7,
+    "downloads": 9600,
+    "ratings": [
+      { "name": "1 star", "count": 320 },
+      { "name": "2 star", "count": 480 },
+      { "name": "3 star", "count": 620 },
+      { "name": "4 star", "count": 1500 },
+      { "name": "5 star", "count": 5420 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/q3KyFrRg/Netflix.png",
+    "title": "Netflix",
+    "companyName": "Netflix, Inc.",
+    "id": 2,
+    "description": "Netflix is a premium video streaming service that brings an ever-growing collection of movies, series, and original shows to your fingertips. With adaptive streaming quality, offline downloads, and personalized recommendations, Netflix ensures you’re always entertained. From global blockbusters to regional favorites, Netflix caters to every mood and language preference, redefining home entertainment for millions of viewers worldwide.",
+    "size": 95,
+    "reviews": 7560,
+    "ratingAvg": 4.5,
+    "downloads": 9820,
+    "ratings": [
+      { "name": "1 star", "count": 300 },
+      { "name": "2 star", "count": 420 },
+      { "name": "3 star", "count": 610 },
+      { "name": "4 star", "count": 1750 },
+      { "name": "5 star", "count": 4480 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/yFzS7NKh/PH.png",
+    "title": "Programming Hero",
+    "companyName": "Programming Hero Ltd.",
+    "id": 3,
+    "description": "Programming Hero is an interactive learning platform designed to make coding fun, engaging, and beginner-friendly. It turns complex programming concepts into interactive mini-games and real-world projects. Users can learn HTML, CSS, JavaScript, Python, and more while building real apps and games step by step. The app includes personalized progress tracking, daily coding challenges, quizzes, and a supportive community of learners and mentors. Its project-based approach helps users develop practical coding experience instead of rote memorization. Whether you’re a complete beginner or advancing your skills, Programming Hero helps you transform from zero to a confident developer in an enjoyable, gamified way.",
+    "size": 125,
+    "reviews": 5840,
+    "ratingAvg": 4.7,
+    "downloads": 8740,
+    "ratings": [
+      { "name": "1 star", "count": 120 },
+      { "name": "2 star", "count": 210 },
+      { "name": "3 star", "count": 430 },
+      { "name": "4 star", "count": 1580 },
+      { "name": "5 star", "count": 3500 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/mCygTpC1/Whats-App-Messenger.png",
+    "title": "WhatsApp Messenger",
+    "companyName": "Meta Platforms, Inc.",
+    "id": 4,
+    "description": "WhatsApp Messenger allows instant text, voice, and video communication across the globe. With end-to-end encryption, you can securely share messages, photos, and documents. Group chats, voice notes, and web syncing make it an essential communication tool for individuals and businesses alike. Simple, reliable, and fast — WhatsApp keeps people connected anytime, anywhere.",
+    "size": 89,
+    "reviews": 6930,
+    "ratingAvg": 4.8,
+    "downloads": 8730,
+    "ratings": [
+      { "name": "1 star", "count": 180 },
+      { "name": "2 star", "count": 270 },
+      { "name": "3 star", "count": 430 },
+      { "name": "4 star", "count": 980 },
+      { "name": "5 star", "count": 7070 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/8nffkDJx/TikTok.png",
+    "title": "TikTok",
+    "companyName": "ByteDance Ltd.",
+    "id": 5,
+    "description": "TikTok is a platform for creativity and entertainment where users share short videos featuring music, trends, and humor. With powerful editing tools, special effects, and personalized feeds, TikTok has become a cultural phenomenon. From dance challenges to educational snippets, TikTok enables self-expression and global connectivity, inspiring millions of creators daily.",
+    "size": 120,
+    "reviews": 8120,
+    "ratingAvg": 4.6,
+    "downloads": 9900,
+    "ratings": [
+      { "name": "1 star", "count": 250 },
+      { "name": "2 star", "count": 300 },
+      { "name": "3 star", "count": 600 },
+      { "name": "4 star", "count": 1480 },
+      { "name": "5 star", "count": 6490 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/1fhXn1nh/youtube.jpg",
+    "title": "YouTube",
+    "companyName": "Google LLC",
+    "id": 6,
+    "description": "YouTube is the world’s most popular video-sharing platform. Users can watch, upload, and share videos ranging from tutorials to entertainment. Personalized recommendations and subscriptions keep content relevant. Creators earn through monetization, while viewers can enjoy ad-free experiences with YouTube Premium. YouTube empowers creativity and knowledge-sharing globally.",
+    "size": 115,
+    "reviews": 7750,
+    "ratingAvg": 4.7,
+    "downloads": 9520,
+    "ratings": [
+      { "name": "1 star", "count": 310 },
+      { "name": "2 star", "count": 410 },
+      { "name": "3 star", "count": 580 },
+      { "name": "4 star", "count": 1280 },
+      { "name": "5 star", "count": 5170 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/35vZXqBX/Google-Maps.png",
+    "title": "Google Maps",
+    "companyName": "Google LLC",
+    "id": 7,
+    "description": "Google Maps provides precise navigation, traffic updates, and satellite imagery to help users explore the world efficiently. From turn-by-turn directions to business listings, Maps integrates location data with real-time insights. Offline mode, Street View, and live traffic visualization make it an indispensable tool for travel, commuting, and exploration.",
+    "size": 76,
+    "reviews": 5920,
+    "ratingAvg": 4.6,
+    "downloads": 8500,
+    "ratings": [
+      { "name": "1 star", "count": 210 },
+      { "name": "2 star", "count": 320 },
+      { "name": "3 star", "count": 440 },
+      { "name": "4 star", "count": 1190 },
+      { "name": "5 star", "count": 5760 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/M4761fv/x.jpg",
+    "title": "X (Twitter)",
+    "companyName": "X Corp",
+    "id": 8,
+    "description": "X, formerly Twitter, is a social networking platform for real-time news, opinions, and trends. It allows users to share short posts, follow topics, and engage in global conversations. With Spaces for audio discussions and Subscriptions for creators, X continues to evolve as the digital public square.",
+    "size": 90,
+    "reviews": 5230,
+    "ratingAvg": 4.3,
+    "downloads": 7920,
+    "ratings": [
+      { "name": "1 star", "count": 190 },
+      { "name": "2 star", "count": 260 },
+      { "name": "3 star", "count": 410 },
+      { "name": "4 star", "count": 1000 },
+      { "name": "5 star", "count": 3370 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/hxyY2mKB/Duolingo.png",
+    "title": "Duolingo",
+    "companyName": "Duolingo, Inc.",
+    "id": 9,
+    "description": "Duolingo turns language learning into a fun, game-like experience. It offers bite-sized lessons, streak rewards, and interactive challenges. The app supports dozens of languages and adapts lessons based on your performance. Whether you’re learning Spanish or Japanese, Duolingo keeps you motivated with progress tracking and daily goals.",
+    "size": 70,
+    "reviews": 6880,
+    "ratingAvg": 4.8,
+    "downloads": 9000,
+    "ratings": [
+      { "name": "1 star", "count": 140 },
+      { "name": "2 star", "count": 180 },
+      { "name": "3 star", "count": 360 },
+      { "name": "4 star", "count": 890 },
+      { "name": "5 star", "count": 7310 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/C5fD2qz5/Amazon.png",
+    "title": "Amazon Shopping",
+    "companyName": "Amazon Mobile LLC",
+    "id": 10,
+    "description": "Amazon Shopping brings the world’s largest marketplace to your device. You can browse millions of products, compare prices, and order with a single tap. Track your packages in real time, explore daily deals, and enjoy Prime member benefits. The app ensures secure payments, personalized recommendations, and fast delivery.",
+    "size": 108,
+    "reviews": 5480,
+    "ratingAvg": 4.5,
+    "downloads": 8350,
+    "ratings": [
+      { "name": "1 star", "count": 200 },
+      { "name": "2 star", "count": 270 },
+      { "name": "3 star", "count": 430 },
+      { "name": "4 star", "count": 1040 },
+      { "name": "5 star", "count": 3540 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/gbGqwSf8/Facebook.png",
+    "title": "Facebook",
+    "companyName": "Meta Platforms, Inc.",
+    "id": 11,
+    "description": "Facebook connects people worldwide through posts, photos, and communities. With its intuitive interface, users can share memories, join groups, and stay informed. Businesses use it for marketing through pages and ads, while individuals enjoy social interaction and live video features. Facebook continues to be a cornerstone of social networking.",
+    "size": 115,
+    "reviews": 5770,
+    "ratingAvg": 4.2,
+    "downloads": 8600,
+    "ratings": [
+      { "name": "1 star", "count": 330 },
+      { "name": "2 star", "count": 410 },
+      { "name": "3 star", "count": 580 },
+      { "name": "4 star", "count": 1220 },
+      { "name": "5 star", "count": 3230 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/kksLCZb/Zoom.jpg",
+    "title": "Zoom",
+    "companyName": "Zoom Video Communications",
+    "id": 12,
+    "description": "Zoom allows users to host or join video meetings and webinars from anywhere. It supports screen sharing, chat, breakout rooms, and virtual backgrounds. Businesses, educators, and individuals use Zoom for collaboration and remote work. With high-quality video and encryption, it remains a leader in online communication.",
+    "size": 98,
+    "reviews": 6130,
+    "ratingAvg": 4.6,
+    "downloads": 8120,
+    "ratings": [
+      { "name": "1 star", "count": 260 },
+      { "name": "2 star", "count": 330 },
+      { "name": "3 star", "count": 480 },
+      { "name": "4 star", "count": 1140 },
+      { "name": "5 star", "count": 3910 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/RGqgVDh8/Snapchat.jpg",
+    "title": "Snapchat",
+    "companyName": "Snap Inc.",
+    "id": 13,
+    "description": "Snapchat brings fun communication through photos and short videos that disappear after viewing. With creative filters, AR effects, and stories, users share spontaneous moments. Snap Map lets friends see where you are, while Spotlight showcases viral content. Snapchat is perfect for visual storytelling and staying connected with friends.",
+    "size": 85,
+    "reviews": 5730,
+    "ratingAvg": 4.3,
+    "downloads": 7990,
+    "ratings": [
+      { "name": "1 star", "count": 210 },
+      { "name": "2 star", "count": 320 },
+      { "name": "3 star", "count": 450 },
+      { "name": "4 star", "count": 1030 },
+      { "name": "5 star", "count": 3720 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/jkBj6HqF/Google-Chrome.png",
+    "title": "Google Chrome",
+    "companyName": "Google LLC",
+    "id": 14,
+    "description": "Google Chrome is a fast, secure, and efficient web browser. It offers features like tab management, password saving, and syncing across devices. Chrome ensures safe browsing with built-in protection and supports thousands of extensions. Lightweight yet powerful, it’s the go-to browser for productivity and everyday use.",
+    "size": 122,
+    "reviews": 7240,
+    "ratingAvg": 4.7,
+    "downloads": 9270,
+    "ratings": [
+      { "name": "1 star", "count": 280 },
+      { "name": "2 star", "count": 370 },
+      { "name": "3 star", "count": 510 },
+      { "name": "4 star", "count": 1280 },
+      { "name": "5 star", "count": 4800 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/Pvg2YH5t/Delta-Force.jpg",
+    "title": "Delta Force",
+    "companyName": "THQ Nordic",
+    "id": 15,
+    "description": "Delta Force is a classic tactical first-person shooter that places players in the role of elite military operatives carrying out high-risk missions across deserts, jungles, and urban warzones. The game emphasizes realism over arcade-style action, offering large-scale outdoor maps, dynamic weather conditions, and mission objectives that demand careful planning and teamwork. Players can choose from multiple weapons and gear options, each with authentic ballistics and handling. With both single-player campaigns and online multiplayer modes, Delta Force delivers an immersive experience that rewards strategy, stealth, and precision. Its legacy continues to influence modern tactical shooters, making it a timeless favorite for fans of military combat games.",
+    "size": 780,
+    "reviews": 8462,
+    "ratingAvg": 4.5,
+    "downloads": 9421,
+    "ratings": [
+      { "name": "1 star", "count": 412 },
+      { "name": "2 star", "count": 523 },
+      { "name": "3 star", "count": 732 },
+      { "name": "4 star", "count": 2235 },
+      { "name": "5 star", "count": 4560 }
+    ]
+  }
+]
