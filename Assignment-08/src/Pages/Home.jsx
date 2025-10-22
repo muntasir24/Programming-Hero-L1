@@ -1,13 +1,14 @@
 import React from "react";
 import HeroSection from "../Components/HeroSection";
 import useAppData from "../Hooks/useAppData";
-import ShowCard from "../Components/ShowCard";
+import ShowCard from "../Components/Showcard/ShowCard";
+import { Link } from "react-router";
 
 const Home = () => {
-  const { loading, appData } = useAppData();
+  const { appData } = useAppData();
   const featureData = appData.slice(0, 8);
   // console.log(featureData);
-
+// console.log(loading);
   return (
     <div className="space-y-3">
       <HeroSection></HeroSection>
@@ -17,11 +18,17 @@ const Home = () => {
           Explore All Trending Apps on the Market developed by us
         </p>
 
-        <div className="grid  md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="grid  md:grid-cols-3 lg:grid-cols-4 gap-5  ">
           {featureData.map((appdata) => (
             <ShowCard key={appdata.id} fapps={appdata}></ShowCard>
           ))}
         </div>
+        <Link to={"/apps"}>
+          {" "}
+          <button className="btn btn-md btn-wide bg-linear-to-r from-[#632EE3] to-[#9F62F2] text-white">
+            Show All
+          </button>
+        </Link>
       </div>
     </div>
   );

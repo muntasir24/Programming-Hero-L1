@@ -42,7 +42,7 @@ const HeroSection = () => {
           style={{
             width: "100vw",
             position: "relative",
-            left: "50%",
+            left: "49%",
             marginLeft: "-50vw",
           }}
         >
