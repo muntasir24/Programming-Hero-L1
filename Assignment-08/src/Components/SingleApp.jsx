@@ -7,11 +7,11 @@ const SingleApp = ({ myapp }) => {
     console.log(myapp);
     const { title, image,  size, ratingAvg, reviews, downloads, companyName } = myapp||{} ;
     return (
-      <div className=" flex gap-11 p-4">
-        <div className="">
+      <div className=" md:flex gap-11 p-4 ">
+        <div className=" flex justify-center items-center">
           <img className=" w-60" src={image} alt="" />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 ">
           <h1 className="font-semibold text-2xl mb-2">{title}</h1>
           <p className="text-gray-500 font-semibold">
             Developed by{" "}
@@ -19,9 +19,9 @@ const SingleApp = ({ myapp }) => {
               {companyName}
             </span>
           </p>
-          <div class="divider"></div>
-          <div className="flex gap-8 text-center">
-            <div className="flex flex-col gap-2 justify-center items-center ">
+          <div className="divider"></div>
+          <div className="md:flex gap-8 text-center ">
+            <div className="flex flex-col gap-2 justify-center items-center">
               <Download
                 strokeWidth={3}
                 color="#03A791"
@@ -43,15 +43,13 @@ const SingleApp = ({ myapp }) => {
             </div>
           </div>
 
-          <StyledWrapper>
-            <button className="cursor-pointer mt-9 btn-primary hover:scale-120 transition-transform duration-300 ">
-              <div className='inner'>
+          <StyledWrapper className="flex md:block justify-center items-center ">
+            <button className="btn-wide cursor-pointer mt-9 btn-primary hover:scale-120 transition-transform duration-300 ">
+              <div className="inner">
                 <span className="text"> Install Now ({size}MB)</span>
               </div>
             </button>
           </StyledWrapper>
-
-          
         </div>
       </div>
     );

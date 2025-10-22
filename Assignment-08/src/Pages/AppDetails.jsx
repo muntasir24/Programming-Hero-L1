@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router';
 import useAppData from '../Hooks/useAppData';
 import SingleApp from '../Components/SingleApp';
+import GraphData from '../Components/GraphData';
 
 const AppDetails = () => {
   const location = useLocation();
@@ -15,10 +16,24 @@ const AppDetails = () => {
 
   return (
     <div>
-          <SingleApp myapp={myapp}></SingleApp>
-          <div className='divider'></div>
+      <SingleApp myapp={myapp}></SingleApp>
+      <div className="divider"></div>
+      <div className="space-y-3">
+        <p className="font-semibold text-lg mb-4">Ratings</p>
+        <div className="h-72">
+          <GraphData myapp={myapp}></GraphData>
+        </div>
+      </div>
+      
 
-    </div>
+      <div className="divider"></div>
+      <div className="space-y-3">
+        <p className="font-semibold text-lg mb-4">Description</p>
+              <p className=' text-gray-500'>{ myapp.description}</p>
+          </div>
+          
+
+      </div>
   );
 };
 
