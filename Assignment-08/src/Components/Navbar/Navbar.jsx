@@ -1,11 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import appicon from '../../assets/logo.png'
 import "./Nav.css"
 import { motion, scale } from "framer-motion"; 
 import { Github } from 'lucide-react';
 
 const Navbar = () => {
+  motion ,scale
+  const navigate = useNavigate();
     return (
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
@@ -58,7 +60,9 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="w-12 ml-8 md:ml-18 flex justify-center items-center gap-3">
-            <img className="" src={appicon} alt="" />
+            
+              <img onClick={()=>navigate("/")}  className="cursor-pointer" src={appicon} alt="" />
+            
             <h1 className="font-semibold text-lg bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent ">
               HERO.IO
             </h1>
