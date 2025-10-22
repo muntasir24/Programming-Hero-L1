@@ -1,0 +1,33 @@
+
+.mynav a{
+    padding: 4px;
+    position: relative;
+}
+
+.mynav a::after{
+     content: "";
+ position: absolute;
+ bottom: -5px;
+ left: 0;
+ width: 0;
+ height: 2px;
+ background: linear-gradient(to right, #632EE3, #9F62F2);
+ transition: width 0.3s ease;
+ 
+}
+
+.mynav a:hover{
+    color:  #632EE3;
+}
+
+.mynav a:hover::after{
+    width: 100%;
+}
+a.active-link{
+     color: #632EE3;
+}
+
+a.active-link::after{
+    width: 100%;
+   
+}
