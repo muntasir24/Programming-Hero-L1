@@ -2,12 +2,20 @@ import { motion } from 'framer-motion';
 import { Download, Star } from 'lucide-react';
 import React from 'react';
 import './Showcard.css'
+import { useNavigate } from 'react-router';
 const ShowCard = ({ fapps }) => {
   // console.log(fapps);
   motion
-    const { title, ratingAvg, downloads, image } = fapps;
+  const { title, ratingAvg, downloads, image,id } = fapps;
+  const navigate = useNavigate();
+const slug = title.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
+
+  const handleNavigation=() => {
+    navigate(`/app/${slug}`,{state:{id:id}});
+  }
+
     return (
-      <motion.div whileHover={{scale:1.05 }} transition={{duration:0.2}} whileTap={{scale:0.97}}  className="app-card cursor-pointer card bg-base-100  shadow-sm overflow-hidden">
+      <motion.div onClick={()=>handleNavigation()} whileHover={{scale:1.05 }} transition={{duration:0.2}} whileTap={{scale:0.97}}  className="app-card cursor-pointer card bg-base-100  shadow-sm overflow-hidden">
         <figure className='md:h-72 h-80 w-full overflow-hidden p-5 bg-amber-50 app-img'>
           <img className='object-cover w-full h-full rounded-2xl'
             src={image}
