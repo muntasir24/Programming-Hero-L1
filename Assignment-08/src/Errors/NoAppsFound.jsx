@@ -19,7 +19,7 @@ const NoAppsFound = () => {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-        />r
+        />
         <p className="text-5xl font-bold text-gray-800  text-center">No Apps Found</p>{" "}
       </div>
     );
