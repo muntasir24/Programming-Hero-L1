@@ -2,6 +2,7 @@ import React, {  useState } from 'react';
 import { ArrowRight, Download, Star } from "lucide-react";
 import { getInstalledApps } from '../Utils/LocalStorage';
 import toast from 'react-hot-toast';
+import NoAppsFound from '../Errors/NoAppsFound';
 
 
 
@@ -9,8 +10,8 @@ const Installation = () => {
     const [storedApps, setStoredApps] = useState(() => getInstalledApps());
     const [sortType, setSortType] = useState('');
 
-
-  if( !storedApps || storedApps.length==0) return <p>empty</p>
+  const loading = (!storedApps || storedApps.length == 0);
+  if (loading) return <NoAppsFound></NoAppsFound>;
   
     const handleRemove = (id) => {
         const filterArr = storedApps.filter(s => s.id != id);
@@ -51,17 +52,21 @@ const Installation = () => {
         </p>
 
         <div className="md:flex justify-between items-center space-y-3 ">
-          <h1 className="font-semibold">  Apps Found</h1>
+          <h1 className="font-semibold">
+            {searchedApps.length || 0} Apps Found
+          </h1>
           <label className="w-full max-w-lg">
-            <select
-              className="select"
-              value={sortType}
-              onChange={(e) => setSortType(e.target.value)}
-            >
-              <option> Sort By Download</option>
-              <option value="asc">Low → High</option>
-              <option value="des">High → Low</option>
-            </select>
+            {loading ? "": (
+              <select
+                className="select"
+                value={sortType}
+                onChange={(e) => setSortType(e.target.value)}
+              >
+                <option> Sort By Download</option>
+                <option value="asc">Low → High</option>
+                <option value="des">High → Low</option>
+              </select>
+            )}
           </label>
         </div>
         <div className="space-y-3">
@@ -94,7 +99,10 @@ const Installation = () => {
                     </div>
                   </div>
                   <button
-                    onClick={() => { handleRemove(ap.id); notify(ap.title); }}
+                    onClick={() => {
+                      handleRemove(ap.id);
+                      notify(ap.title);
+                    }}
                     className="btn btn-primary "
                   >
                     Uninstall

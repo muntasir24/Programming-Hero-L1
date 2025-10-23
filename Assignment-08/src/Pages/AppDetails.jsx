@@ -4,13 +4,14 @@ import useAppData from '../Hooks/useAppData';
 import SingleApp from '../Components/SingleApp';
 import GraphData from '../Components/GraphData';
 import AppNotFound from '../Errors/AppNotFound';
+import SingleAppSkeleton from '../Spinner/SingleAppSkeleton';
 
 const AppDetails = () => {
   const location = useLocation();
   const appID = location?.state?.id;
   const { loading, appData } = useAppData();
 
-  if (loading) return <p>laoding appppp</p>;
+  if (loading) return <SingleAppSkeleton></SingleAppSkeleton>
   const myapp = appData.find((a) => a.id === Number(appID));
 
   if (!myapp) return <AppNotFound></AppNotFound>

@@ -41,8 +41,8 @@ const SingleApp = ({ myapp }) => {
 // console.log(apps);
     return (
       <div className=" md:flex gap-11 p-4 ">
-        <div className=" flex justify-center items-center">
-          <img className=" w-60" src={image} alt="" />
+        <div className=" flex justify-center items-center bg-amber-50 p-4 rounded-2xl">
+          <img className=" w-60 rounded-2xl" src={image} alt="" />
         </div>
         <div className="flex-1 ">
           <h1 className="font-semibold text-2xl mb-2">{title}</h1>

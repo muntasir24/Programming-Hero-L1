@@ -3,12 +3,14 @@ import HeroSection from "../Components/HeroSection";
 import useAppData from "../Hooks/useAppData";
 import ShowCard from "../Components/Showcard/ShowCard";
 import { Link } from "react-router";
+import GlobalSpinner from "../Spinner/GlobalSpinner";
+
 
 const Home = () => {
-  const { appData } = useAppData();
+  const { appData ,loading} = useAppData();
   const featureData = appData.slice(0, 8);
   // console.log(featureData);
-// console.log(loading);
+  if (loading) return <GlobalSpinner></GlobalSpinner>
   return (
     <div className="space-y-3">
       <HeroSection></HeroSection>
