@@ -1,11 +1,44 @@
 import { Download, Star, ThumbsUp } from 'lucide-react';
-import React from 'react';
+import toast, { Toaster } from "react-hot-toast";
 import Button from './Button';
 import styled from 'styled-components';
+import { getInstalledApps, handleAdd } from '../Utils/LocalStorage';
+import {  useState } from 'react';
+
 
 const SingleApp = ({ myapp }) => {
-    console.log(myapp);
-    const { title, image,  size, ratingAvg, reviews, downloads, companyName } = myapp||{} ;
+  const { title, image, size, ratingAvg, reviews, downloads, companyName } = myapp || {};
+  const [apps, setApps] = useState(() => getInstalledApps());
+
+  const isInstalled = apps?.some(ap => ap.id === myapp.id) ||false;
+ 
+ 
+  const notify = (title) => {
+    const fakePromise = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 500);
+    });
+
+    toast.promise(
+      fakePromise,
+      {
+        loading: `Installing ${title}`,
+        success: <b>{ title} Installed successfully!</b>,
+        error: <b>Installation failed!</b>,
+      },
+      {
+        style: {
+          borderRadius: "8px",
+          background: "#333",
+          color: "#fff",
+        },
+      }
+    );
+  };
+
+
+// console.log(apps);
     return (
       <div className=" md:flex gap-11 p-4 ">
         <div className=" flex justify-center items-center">
@@ -44,9 +77,28 @@ const SingleApp = ({ myapp }) => {
           </div>
 
           <StyledWrapper className="flex md:block justify-center items-center ">
-            <button className="btn-wide cursor-pointer mt-9 btn-primary hover:scale-120 transition-transform duration-300 ">
-              <div className="inner">
-                <span className="text"> Install Now ({size}MB)</span>
+            <button
+              onClick={() => {
+                notify(title);
+                setTimeout(() => {
+                  handleAdd(myapp, setApps);
+                }, 500);
+                
+                
+              }
+      
+              }
+              className={`${
+                isInstalled
+                  ? "btn btn-wide btn-primary mt-9 opacity-[130] pointer-events-none cursor-not-allowed"
+                  : "btn-wide cursor-pointer mt-9 btn-primary hover:scale-120 transition-transform duration-300"
+              }`}
+            >
+              <div className={`${isInstalled ? "" : "inner"}`}>
+                <span className={`${isInstalled ? "" : "text"}`}>
+                  {isInstalled ? "Installed": `Install Now (${size}MB)`}
+                 
+                </span>
               </div>
             </button>
           </StyledWrapper>
@@ -54,6 +106,7 @@ const SingleApp = ({ myapp }) => {
       </div>
     );
 };
+
 
 
 const StyledWrapper = styled.div`

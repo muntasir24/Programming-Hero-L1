@@ -3,11 +3,14 @@ import { Link, useParams } from 'react-router';
 import useProducts from '../../Hooks/useProducts';
 
 const ProductDetails = () => {
-    const { id } = useParams();
+  const { id } = useParams();
+  console.log(id);
     const { products, Loading } = useProducts();
     if (Loading) return <p> LOadingggggggggggggggg</p>;
     const product = products.find((p) => p.id === Number(id));
-    
+  if (!product) {
+        return <p>ddd</p>
+      }
 
     const handleWishlist = () => {
         let savedItems =JSON.parse( localStorage.getItem('wishlist')); 

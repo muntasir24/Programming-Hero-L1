@@ -3,6 +3,7 @@ import { useLocation } from 'react-router';
 import useAppData from '../Hooks/useAppData';
 import SingleApp from '../Components/SingleApp';
 import GraphData from '../Components/GraphData';
+import AppNotFound from '../Errors/AppNotFound';
 
 const AppDetails = () => {
   const location = useLocation();
@@ -12,7 +13,7 @@ const AppDetails = () => {
   if (loading) return <p>laoding appppp</p>;
   const myapp = appData.find((a) => a.id === Number(appID));
 
-  
+  if (!myapp) return <AppNotFound></AppNotFound>
 
   return (
     <div>

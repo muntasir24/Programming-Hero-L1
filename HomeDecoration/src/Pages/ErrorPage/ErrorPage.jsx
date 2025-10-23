@@ -5,6 +5,7 @@ const ErrorPage = () => {
     const error = useRouteError();
     return (
         <div>
+            jhjbnhnhb
             {error.message}
         </div>
     );
