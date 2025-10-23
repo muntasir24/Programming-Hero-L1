@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import HeroSection from "../Components/HeroSection";
 import useAppData from "../Hooks/useAppData";
 import ShowCard from "../Components/Showcard/ShowCard";
@@ -9,11 +9,15 @@ import GlobalSpinner from "../Spinner/GlobalSpinner";
 const Home = () => {
   const { appData ,loading} = useAppData();
   const featureData = appData.slice(0, 8);
-  // console.log(featureData);
+
   if (loading) return <GlobalSpinner></GlobalSpinner>
+
+
+
+
   return (
     <div className="space-y-3">
-      <HeroSection></HeroSection>
+      <HeroSection  ></HeroSection>
       <div className="text-center space-y-5">
         <h1 className="text-4xl font-bold">Trending App</h1>
         <p className="text-gray-400">
