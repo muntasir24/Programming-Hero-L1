@@ -1,16 +1,102 @@
-# React + Vite
+<h1 align="center">HERO.IO - Productive App Platform</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <strong>HERO.IO</strong> is a web application showcasing trending apps developed by HERO.IO. Users can browse, search, and install apps. This project uses <strong>React</strong>, <strong>Tailwind CSS</strong>, and <strong>localStorage</strong> for managing installed apps.
+</p>
 
-Currently, two official plugins are available:
+<hr>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>Features</h2>
+<ul>
+  <li>Browse trending apps</li>
+  <li>Search apps in real-time</li>
+  <li>Install apps and track installed apps</li>
+  <li>Loading spinner while data or images load</li>
+  <li>Responsive layout</li>
+  <li>Smooth animations with <strong>Framer Motion</strong></li>
+</ul>
 
-## React Compiler
+<h2>Technologies Used</h2>
+<ul>
+  <li>React.js</li>
+  <li>Tailwind CSS</li>
+  <li>Framer Motion</li>
+  <li>React Hot Toast</li>
+  <li>LocalStorage API</li>
+  <li>Axios for data fetching</li>
+</ul>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<h2>Installation</h2>
+<pre>
+<code>
+# Clone the repository
+git clone https://github.com/yourusername/hero.io.git
 
-## Expanding the ESLint configuration
+# Go into the project directory
+cd hero.io
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+</code>
+</pre>
+
+<h2>Folder Structure</h2>
+<pre>
+<code>
+hero.io/
+├─ public/
+│  └─ assets/         # Images (hero, logo, appstore, playstore)
+├─ src/
+│  ├─ Components/     # Reusable components like HeroSection, ShowCard
+│  ├─ Hooks/          # Custom hooks like useAppData
+│  ├─ Pages/          # Home, Apps pages
+│  ├─ Spinner/        # GlobalSpinner component
+│  └─ Utils/          # LocalStorage functions
+└─ package.json
+</code>
+</pre>
+
+<h2>Example Code Snippets</h2>
+
+<h3>Install Button Logic (LocalStorage)</h3>
+<pre>
+<code>
+export const handleAdd = (myapp, setApps) => {
+  let stored = JSON.parse(localStorage.getItem("installed")) || [];
+  const exists = stored.some((it) => it.id === myapp.id);
+  if (exists) {
+    alert("Already installed");
+    return;
+  }
+  const updated = [...stored, myapp];
+  localStorage.setItem("installed", JSON.stringify(updated));
+  setApps(updated);
+};
+</code>
+</pre>
+
+<h3>Custom Hook for App Data</h3>
+<pre>
+<code>
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+const useAppData = () => {
+  const [appData, setAppData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios("/appdata.json")
+      .then((res) => setAppData(res.data))
+      .finally(() => setLoading(false));
+  }, []);
+
+  return { appData, loading };
+};
+
+export default useAppData;
+</code>
+</pre>
