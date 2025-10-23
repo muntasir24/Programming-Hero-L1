@@ -29,17 +29,7 @@
 <h2>Installation</h2>
 <pre>
 <code>
-# Clone the repository
-git clone https://github.com/yourusername/hero.io.git
 
-# Go into the project directory
-cd hero.io
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm start
 </code>
 </pre>
 
