@@ -40,22 +40,22 @@ const staggerContainer = {
         viewport={{ once: true }}
       >
         <motion.div
-        onClick={()=> window.open("https://venerable-chebakia-2d29f1.netlify.app/", "_blank")}
+        onClick={()=> window.open("https://aziz-muntasir-appstore.netlify.app/", "_blank")}
           className="project-card"
           variants={fadeInUp}
           whileHover={{ y: -10, transition: { duration: 0.2 } }}
         >
           <motion.div
             className="project-image"
-            style={{ backgroundImage: "url('/projects/BoiPoka.png')" }}
+            style={{ backgroundImage: "url('/projects/app.png')" }}
             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
           />
-          <h3> Boi Poka</h3>
+          <h3> App store</h3>
           <p>
-           A book discovery and reading platform where users can browse, review, and organize their favorite books
+            My Hero App ,Build for make life Easy
           </p>
           <div className="project-tech">
-            <span>React</span>
+            <span>React Router</span>
             <span>DaisyUI</span>
             <span>TailwindCSS</span>
           </div>
@@ -65,7 +65,7 @@ const staggerContainer = {
             cursor:"pointer"
             
          }
-         }> <motion.a href="https://venerable-chebakia-2d29f1.netlify.app/"  >
+         }> <motion.a href="https://aziz-muntasir-appstore.netlify.app/"  >
             Click Anywhere to See
           </motion.a></motion.div>
         </motion.div>
@@ -98,6 +98,7 @@ const staggerContainer = {
             borderRadius:"50px",
             margin:"7px 6px",
             cursor:"pointer"
+
             
          }
          }> <motion.a href="https://venerable-chebakia-2d29f1.netlify.app/"  >
