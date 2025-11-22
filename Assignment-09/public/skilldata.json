@@ -1,0 +1,89 @@
+[
+    {
+    "skillId": 9,
+    "skillName": "Cooking – Beginner Home Recipes",
+    "providerName": "Samira Khan",
+    "providerEmail": "samira@skillswap.com",
+    "price": 12,
+    "rating": 4.5,
+    "slotsAvailable": 4,
+    "description": "Easy home-style cooking lessons for students and beginners.",
+    "image": "https://i.ibb.co.com/C5PwTnVB/cooking.png",
+    "category": "Cooking"
+  },
+    {
+    "skillId": 5,
+    "skillName": "Karate Basics Training",
+    "providerName": "Sensei Hiro Tanaka",
+    "providerEmail": "hiro@skillswap.com",
+    "price": 25,
+    "rating": 4.8,
+    "slotsAvailable": 6,
+    "description": "Traditional karate training for discipline, self-defense, and fitness.",
+    "image": "https://i.ibb.co.com/QzXSpXk/karate.jpg",
+    "category": "Fitness"
+  }
+  ,
+  {
+    "skillId": 3,
+    "skillName": "Language Exchange – Bangla to English",
+    "providerName": "Rafiul Hasan",
+    "providerEmail": "rafi@skillswap.com",
+    "price": 5,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "One-on-one language exchange sessions to improve English and Bangla fluency.",
+    "image": "https://i.ibb.co.com/yBRbv1zb/language.png",
+    "category": "Language"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Beginner Coding Help – Python",
+    "providerName": "Tanvir Ahmed",
+    "providerEmail": "tanvir@skillswap.com",
+    "price": 15,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Hands-on help with Python basics, loops, functions, and debugging.",
+    "image": "https://i.ibb.co.com/VW6mpx4M/python.jpg",
+    "category": "Programming"
+  },
+
+  {
+    "skillId": 6,
+    "skillName": "Math Tutoring – Algebra & Calculus",
+    "providerName": "Nusrat Jahan",
+    "providerEmail": "nusrat@skillswap.com",
+    "price": 18,
+    "rating": 4.6,
+    "slotsAvailable": 3,
+    "description": "Step-by-step math tutoring for high school and university students.",
+    "image": "https://i.ibb.co.com/rGMMDmVr/math-algebra.webp",
+    "category": "Education"
+  },
+  {
+    "skillId": 7,
+    "skillName": "Graphic Design Essentials",
+    "providerName": "Arif Chowdhury",
+    "providerEmail": "arif@skillswap.com",
+    "price": 22,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Learn Photoshop, Illustrator, and design principles for beginners.",
+    "image": "https://i.ibb.co.com/bRHn1TB0/graphic-design-essentials-module.png",
+    "category": "Design"
+  },
+  {
+    "skillId": 8,
+    "skillName": "Public Speaking & Confidence Building",
+    "providerName": "Maria Rahman",
+    "providerEmail": "maria@skillswap.com",
+    "price": 30,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Improve stage presence, communication, and speaking clarity.",
+    "image": "https://i.ibb.co.com/M5CTK98b/public-speakig.png",
+    "category": "Personal Development"
+  }
+
+]
