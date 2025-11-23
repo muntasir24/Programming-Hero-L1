@@ -7,6 +7,7 @@ import Register from "../Pages/Register";
 import PageNotFound from "../Errors/PageNotFound";
 import Profile from "../Pages/Profile";
 import SkillDetails from "../Components/details/SkillDetails";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -20,12 +21,8 @@ const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path:'/profile',
-        Component :Profile
-      },
-      {
         path:'/details/:title',
-        Component:SkillDetails
+        element:<PrivateRoute><SkillDetails></SkillDetails></PrivateRoute>
       }
     ],
   },
@@ -43,6 +40,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+   {
+        path:'/profile',
+        element:<PrivateRoute> <Profile></Profile> </PrivateRoute>
+      },
 ]);
 
 export default router;

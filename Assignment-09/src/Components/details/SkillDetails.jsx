@@ -1,12 +1,13 @@
 import 'aos/dist/aos.css'; 
 import Aos from 'aos';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLocation } from 'react-router';
 import useSkillData from '../../Hooks/useSkillData';
 import GlobalSpinner from '../../Spinner/GlobalSpinner';
 import UpperCard from './UpperCard';
 import ButtonWrapper from '../ButtonWrapper';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../Contexts/AuthContext';
 const fakeSave = () => {
   return new Promise((resolve, reject) => {
    
@@ -20,12 +21,17 @@ const fakeSave = () => {
 };
 
 const SkillDetails = () => {
+  const {loadingUser}=useContext(AuthContext);
+
     const location=useLocation();
     const id=location?.state?.id;
+    console.log(location);
     const {skillData,loading}=useSkillData();
-if(loading) return <GlobalSpinner></GlobalSpinner>
+if( loading) return <GlobalSpinner></GlobalSpinner>
+
   const skill=skillData.find(s=>s.skillId===Number(id));
-  console.log(skill);
+  console.log(location);
+  console.log(skill,id);
   const{rating,slotsAvailable,description,providerName}=skill;
 
 
