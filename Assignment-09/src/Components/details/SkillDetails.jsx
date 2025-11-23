@@ -6,7 +6,18 @@ import useSkillData from '../../Hooks/useSkillData';
 import GlobalSpinner from '../../Spinner/GlobalSpinner';
 import UpperCard from './UpperCard';
 import ButtonWrapper from '../ButtonWrapper';
+import toast from 'react-hot-toast';
+const fakeSave = () => {
+  return new Promise((resolve, reject) => {
+   
+    setTimeout(() => {
+      const success = true; 
 
+      if (success) resolve();
+      else reject();
+    }, 1000); 
+  });
+};
 
 const SkillDetails = () => {
     const location=useLocation();
@@ -15,11 +26,23 @@ const SkillDetails = () => {
 if(loading) return <GlobalSpinner></GlobalSpinner>
   const skill=skillData.find(s=>s.skillId===Number(id));
   console.log(skill);
-  const{rating,slotsAvailable,description}=skill;
+  const{rating,slotsAvailable,description,providerName}=skill;
 
 
     Aos.init({ duration: 900, easing: "ease-in-out" , });
- 
+  
+    const handleButton=(e)=>{
+      e.preventDefault();
+     e.target.reset();
+     toast.promise(
+    fakeSave(),
+    {
+      loading: "Processing..",
+      success: <b>Session Booked with {providerName}</b>,
+      error: <b>Could not</b>,
+    }
+  );
+    }
 
     return (
         
@@ -80,9 +103,21 @@ if(loading) return <GlobalSpinner></GlobalSpinner>
   </div>
 
 </div>
-<div className='pt-10 '>
-  <ButtonWrapper></ButtonWrapper>
+<div className='pt-10  flex justify-center '>
+  <div className="card w-full  shrink-0 ">
+      <div className="card-body">
+        <form onSubmit={handleButton} className='fieldset  flex flex-col justify-center items-center'>
+          
+          <input type="name" className="input" placeholder="Your Name" />
+         
+          <input type="email" className="input" placeholder="Email" />
+
+          <button className="btn btn-neutral mt-4">Book Session Now</button>
+        </form>
+      </div>
+    </div>
 </div>
+
 
 
       </div>

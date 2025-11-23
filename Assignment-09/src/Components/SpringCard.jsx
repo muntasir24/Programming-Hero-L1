@@ -35,9 +35,9 @@ export default function SpringCard({image}) {
     // },
     exitBeforeEnter: true,
     config: {
-      duration: 3000,
+      duration: 2000,
     },
-    delay: 800,
+    delay: 300,
     ref: springApi,
   })
 

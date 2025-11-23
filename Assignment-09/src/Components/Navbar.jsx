@@ -9,7 +9,7 @@ const Navbar = () => {
     </>
     return (
         <div className=' '>
-         <div className="navbar bg-base-100 shadow-sm">
+         <div className="navbar py-5 bg-base-100  shadow-[0_2px_3px_rgba(86,111,205,0.3)]">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,8 +31,8 @@ const Navbar = () => {
    {links}
   </div>
   <div className="navbar-end hidden lg:flex  ">
-    <NavLink >Sign in</NavLink>
-    <NavLink className="btn btn-primary ml-2">Sign Up for free</NavLink>
+    <NavLink to={'/auth/login'}>Sign in</NavLink>
+    <NavLink to={'/auth/register'} className="btn btn-primary ml-2">Sign Up for free</NavLink>
   </div>
 </div>
         </div>
