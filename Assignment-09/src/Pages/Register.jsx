@@ -10,7 +10,7 @@ const Register = () => {
   const [err, setErr] = useState("");
   const [errcreate, setErrcreate] = useState("");
   const [password, setPassword] = useState("");
-  const { signUpwithEmail, user, setUser, updateUser,handleGoogleSignin } =
+  const { signUpwithEmail, setUser, updateUser,handleGoogleSignin } =
     useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   // console.log(signUpwithEmail);
@@ -45,7 +45,7 @@ const Register = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
-    const photourl = e.target.photourl.value;
+    const photourl = e?.target?.photourl?.value;
     const pass = e.target.pass.value;
     if (err.length) return;
     //start

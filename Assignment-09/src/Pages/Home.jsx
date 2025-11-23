@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Slider from '../Components/Slider';
 import Skills from '../Components/Skills';
 import TopProviders from '../Components/TopProviders';
@@ -9,7 +9,7 @@ import { AuthContext } from '../Contexts/AuthContext';
 // import useSkillData from '../Hooks/useSkillData';
 
 const Home = () => {
-   const{user}=useContext(AuthContext);
+//    const{user}=useContext(AuthContext);
 //    console.log(user);
     // console.log(skillData);
     return (

@@ -4,7 +4,7 @@ import { Link, Navigate, useLocation, useNavigate, } from 'react-router';
 import { AuthContext } from '../Contexts/AuthContext';
 import { BiErrorAlt } from 'react-icons/bi';
 import GlobalSpinner from '../Spinner/GlobalSpinner';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 // import toast from 'react-hot-toast';
 
 const Login = () => {

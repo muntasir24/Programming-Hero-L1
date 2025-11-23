@@ -2,19 +2,22 @@ import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import { useContext } from 'react';
 import { AuthContext } from '../Contexts/AuthContext';
+import GlobalSpinner from '../Spinner/GlobalSpinner';
 
 
 const Profile = () => {
-    const {user,setUser,updateUser}=useContext(AuthContext);
+    const {user,setUser,updateUser,loadingUser}=useContext(AuthContext);
+   
     const [isopen,setOpen]=useState(false);
+     if(loadingUser)return <GlobalSpinner></GlobalSpinner>;
     const handleOpen=()=>{
         setOpen(!isopen);
     }
 
     const handleUpdate=(e)=>{
         e.preventDefault();
-        const name=e.target.name.value;
-        const photourl=e.target.photourl.value;
+        const name=e?.target?.name?.value;
+        const photourl=e?.target?.photourl?.value;
         // console.log(name,photourl);
         updateUser({ displayName: name, photoURL: photourl })
           .then(() => {

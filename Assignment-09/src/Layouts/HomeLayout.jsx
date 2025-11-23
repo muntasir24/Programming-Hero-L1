@@ -10,7 +10,7 @@ import GlobalSpinner from '../Spinner/GlobalSpinner';
 const HomeLayout = () => {
 
         const {loadingUser}=useContext(AuthContext);
-        if(loadingUser)return <GlobalSpinner></GlobalSpinner>
+        if(loadingUser)return <GlobalSpinner></GlobalSpinner>;
     return (
         <div className='flex flex-col min-h-screen bg-gray-100   '>
             <Toaster

@@ -6,9 +6,11 @@ import { useContext } from 'react';
 import { signOut } from 'firebase/auth';
 import auth from '../Firebase/firebase.config';
 import { FaUserCircle } from 'react-icons/fa';
+import GlobalSpinner from '../Spinner/GlobalSpinner';
 const Navbar = () => {
   
-const {user}=useContext(AuthContext);
+const {user,loadingUser }=useContext(AuthContext);
+if(loadingUser) return <GlobalSpinner></GlobalSpinner>;
 // console.log(user.photoURL);
 const handleLogout=()=>{
   signOut(auth);
@@ -57,7 +59,7 @@ const handleLogout=()=>{
     <div className="w-10 rounded-full">
       <img
         alt="User "
-        src={user?.photoURL || user?.providerData[0]?.photoURL ||<FaUserCircle />}
+        src={user?.photoURL || user?.providerData[0]?.photoURL }
       />
     </div>
 
