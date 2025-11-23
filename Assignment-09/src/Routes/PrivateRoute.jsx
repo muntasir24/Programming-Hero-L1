@@ -7,7 +7,7 @@ const PrivateRoute = ({children}) => {
     const { user,loadingUser}=useContext(AuthContext)
      
     const location=useLocation();
-    console.log(location);
+    // console.log(location);
 
      if(loadingUser) return <GlobalSpinner></GlobalSpinner>
    

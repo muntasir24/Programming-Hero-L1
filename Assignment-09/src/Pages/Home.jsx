@@ -10,7 +10,7 @@ import { AuthContext } from '../Contexts/AuthContext';
 
 const Home = () => {
    const{user}=useContext(AuthContext);
-   console.log(user);
+//    console.log(user);
     // console.log(skillData);
     return (
         <div className='space-y-5  '>

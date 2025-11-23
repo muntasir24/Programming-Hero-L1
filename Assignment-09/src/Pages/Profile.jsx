@@ -26,17 +26,17 @@ const Profile = () => {
           });
 
     }
-    console.log(user?.providerData[0]?.photoURL);
+    // console.log(user?.providerData[0]?.photoURL);
     return (
         <>
             <Navbar></Navbar>
-         <div className='p-4 py-10 bg-violet-200 '>
-        <div className='max-w-6xl mx-auto  relative '>
+         <div className='p-4 py-10 bg-violet-200  '>
+        <div className='max-w-6xl mx-auto  md:relative  flex flex-col gap-10 md:block  '>
             <div className=' '>
                 <p className='font-semibold '>LEARNER</p>
             <h1 className='font-bold text-4xl text-gray-700'>{user?.displayName}</h1>
             </div>
-            <div className=' shadow-2xl card p-10  bg-white flex flex-col justify-between items-center gap-4  absolute top-[-5] md:top-0 right-0'>
+            <div className=' shadow-2xl card p-10  bg-white flex flex-col justify-between items-center gap-4  md:absolute md:top-0 md:right-0'>
                 <img className='w-30 h-30 object-cover rounded-full' src={user?.photoURL || user?.providerData[0]?.photoURL} alt="" />
                 <p className='text-gray-600 text-lg text-center'>{user?.email}</p>
                 <button onClick={handleOpen}  className='p-3  text-violet-600 font-semibold cursor-pointer  text-sm px-20 w-full border border-violet-500 rounded-2xl'>Update Profile</button>

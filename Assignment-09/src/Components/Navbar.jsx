@@ -5,11 +5,11 @@ import { AuthContext } from '../Contexts/AuthContext';
 import { useContext } from 'react';
 import { signOut } from 'firebase/auth';
 import auth from '../Firebase/firebase.config';
+import { FaUserCircle } from 'react-icons/fa';
 const Navbar = () => {
   
 const {user}=useContext(AuthContext);
-
-
+// console.log(user.photoURL);
 const handleLogout=()=>{
   signOut(auth);
 }
@@ -32,8 +32,10 @@ const handleLogout=()=>{
         tabIndex="-1"
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow my-3">
         {links}
-        <NavLink to={'/auth/login'} className='font-semibold text-lg'>Sign in</NavLink>
-    <NavLink to={'/auth/register'} className="btn btn-primary mt-2">Sign Up for free</NavLink>
+     {
+      !user && ( <>   <NavLink to={'/auth/login'} className='font-semibold text-lg'>Sign in</NavLink>
+    <NavLink to={'/auth/register'} className="btn btn-primary mt-2">Sign Up for free</NavLink></>)
+     }
          
       </ul>
     </div>
@@ -43,7 +45,7 @@ const handleLogout=()=>{
   <div className="navbar-center hidden lg:flex space-x-5">
    {links}
   </div>
-  <div className="navbar-end hidden lg:flex  ">
+  <div className="navbar-end  ">
     {
       user ? (
 <div className="dropdown dropdown-end">
@@ -54,8 +56,8 @@ const handleLogout=()=>{
   >
     <div className="w-10 rounded-full">
       <img
-        alt="User Avatar"
-        src={user?.photoURL || user?.providerData[0]?.photoURL}
+        alt="User "
+        src={user?.photoURL || user?.providerData[0]?.photoURL ||<FaUserCircle />}
       />
     </div>
 
@@ -77,8 +79,8 @@ const handleLogout=()=>{
     <li ><a onClick={handleLogout}>Logout</a></li>
   </ul>
 </div>
-) :(<><NavLink to={'/auth/login'}>Sign in</NavLink>
-    <NavLink to={'/auth/register'} className="btn btn-primary ml-2">Sign Up for free</NavLink></>)
+) :(<div className='hidden lg:flex justify-center items-center '><NavLink to={'/auth/login'}>Sign in</NavLink>
+    <NavLink to={'/auth/register'} className="btn btn-primary ml-2">Sign Up for free</NavLink></div>)
     }
   </div>
 </div>

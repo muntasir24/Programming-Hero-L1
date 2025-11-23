@@ -4,6 +4,7 @@ import { Link, Navigate, useLocation, useNavigate, } from 'react-router';
 import { AuthContext } from '../Contexts/AuthContext';
 import { BiErrorAlt } from 'react-icons/bi';
 import GlobalSpinner from '../Spinner/GlobalSpinner';
+import toast from 'react-hot-toast';
 // import toast from 'react-hot-toast';
 
 const Login = () => {
@@ -12,7 +13,9 @@ const Login = () => {
    
 const location=useLocation();
 const navigate=useNavigate();
-console.log(location);
+const [email,setEmail]=useState('');
+
+// console.log(location);
       const [errcreate, setErrcreate] = useState("");
  
     const handleLogin=(e)=>{
@@ -20,11 +23,11 @@ console.log(location);
         // setErrcreate('');
         const pass=e.target.pass.value;
         const email=e.target.email.value;
-        console.log(email,pass);
+        // console.log(email,pass);
          signInwithEmail(email,pass)
          .then(data=>{
             const user=data.user;
-            console.log(user);
+            // console.log(user);
             
         {  navigate(location?.state?.title || '/' ,{
       state: {
@@ -72,6 +75,15 @@ setUser(user)
     console.log(err);
   })
 }
+
+
+const handleForgetPass = () => {
+  const targetEmail = email?.trim() === "" ? "example@mail.com" : email;
+
+  navigate(`/auth/forget/${targetEmail}`);
+};
+
+
     return (
         <div className=' flex max-w-6xl mx-auto mt-10 gap-10'>
     <div className='hidden md:flex md:w-1/2'> 
@@ -85,9 +97,9 @@ setUser(user)
       <div className=" flex flex-col justify-center items-center pt-5">
       <form onSubmit={handleLogin}  className='space-y-5'>
          
-          <input required name='email' type="email" className="input focus:ring-0 outline-0 focus:border-violet-500  w-full h-14 px-4" placeholder="Email" />
+          <input defaultValue={email} onChange={(e)=>setEmail(e.target.value)} required name='email' type="email" className="input focus:ring-0 outline-0 focus:border-violet-500  w-full h-14 px-4" placeholder="Email" />
           <input required name='pass' type="password" className="input focus:ring-0 outline-0 focus:border-violet-500 w-full h-14 px-4" placeholder="Password" />
-          <div><a className="link link-hover hover:text-blue-500">Forgot password?</a></div>
+          <div><a onClick={handleForgetPass} className="link link-hover hover:text-blue-500">Forgot password?</a></div>
           <button className="btn btn-primary w-full mt-4">Continue</button>
        
       </form>

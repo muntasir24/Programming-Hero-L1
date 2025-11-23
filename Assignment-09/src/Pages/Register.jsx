@@ -20,7 +20,7 @@ const Register = () => {
   const handlePassOnChange = (e) => {
     const value = e.target.value;
     setPassword(value);
-    console.log(value);
+    // console.log(value);
     const hasUpper = /[A-Z]/.test(value);
     const hasLower = /[a-z]/.test(value);
     const minLength = value.length >= 6;
@@ -84,7 +84,7 @@ const Register = () => {
       
       
 
-    console.log(user);
+    // console.log(user);
   };
 
 const googleSignin=()=>{

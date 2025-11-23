@@ -8,6 +8,7 @@ import PageNotFound from "../Errors/PageNotFound";
 import Profile from "../Pages/Profile";
 import SkillDetails from "../Components/details/SkillDetails";
 import PrivateRoute from "./PrivateRoute";
+import Forget from "../Pages/Forget";
 
 
 const router = createBrowserRouter([
@@ -23,12 +24,13 @@ const router = createBrowserRouter([
       {
         path:'/details/:title',
         element:<PrivateRoute><SkillDetails></SkillDetails></PrivateRoute>
-      }
+      },
     ],
   },
   {
     path: "/auth",
     element: <AuthLayout></AuthLayout>,
+    errorElement:<PageNotFound></PageNotFound>,
     children: [
       {
         path: "login",
@@ -38,11 +40,17 @@ const router = createBrowserRouter([
         path: "register",
         element: <Register></Register>,
       },
+      {
+        path:"forget/:email",
+        element: <Forget></Forget>
+      }
     ],
   },
    {
         path:'/profile',
-        element:<PrivateRoute> <Profile></Profile> </PrivateRoute>
+        element:<PrivateRoute> <Profile></Profile> </PrivateRoute>,
+
+    errorElement:<PageNotFound></PageNotFound>,
       },
 ]);
 

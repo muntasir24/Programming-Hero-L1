@@ -25,13 +25,13 @@ const SkillDetails = () => {
 
     const location=useLocation();
     const id=location?.state?.id;
-    console.log(location);
+    // console.log(location);
     const {skillData,loading}=useSkillData();
 if( loading) return <GlobalSpinner></GlobalSpinner>
 
   const skill=skillData.find(s=>s.skillId===Number(id));
-  console.log(location);
-  console.log(skill,id);
+  // console.log(location);
+  // console.log(skill,id);
   const{rating,slotsAvailable,description,providerName}=skill;
 
 
