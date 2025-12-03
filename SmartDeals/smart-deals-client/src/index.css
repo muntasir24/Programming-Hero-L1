@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+ @plugin "daisyui" {
+   themes: light --default;
+ }
+
+ @plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #632EE3;
+  --color-secondary: teal;
+}
+
+.btn-primary {
+  @apply bg-linear-to-r from-[#632EE3] to-[#9F62F2] ;
+}
