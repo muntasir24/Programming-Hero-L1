@@ -50,7 +50,6 @@ app.post("/lsitings",async(req,res)=>{
     res.send(result)
 })
 
-
 app.get("/latest-listings",async(req,res)=>{
    
     const cursor=listingCollection.find().sort({date:-1}).limit(6);
@@ -58,12 +57,13 @@ app.get("/latest-listings",async(req,res)=>{
     res.send(result)
 })
 
-
 app.get("/listings",async(req,res)=>{
     // console.log(req.query.email);
     const email=req.query.email;
+    const category=req.query.category;
     const query={};
     if(email)query.email=email;
+    if(category)query.category=category;
     console.log(query);
     const cursor=listingCollection.find(query);
     const result=await cursor.toArray();
@@ -89,6 +89,8 @@ app.get("/listings/:id", async (req, res) => {
     res.status(500).send({ message: "Server error" });
   }
 });
+
+
 
 app.patch("/listings/:id",async(req,res)=>{
     const id=req.params.id;
@@ -116,6 +118,7 @@ app.delete("/listings/:id",async(req,res)=>{
     const result= await listingCollection.deleteOne(query);
     res.send(result);
 })
+
 
 
 
