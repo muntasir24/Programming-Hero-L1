@@ -12,7 +12,7 @@ const RecentListCard = ({data}) => {
         
      <motion.div  
    
-     className='  group relative card bg-cyan-50  hover:shadow-xl hover:-translate-y-1 transition-all duration-300 '>
+     className='  group relative card bg-cyan-50  listcard hover:shadow-xl hover:-translate-y-1 transition-all duration-300 '>
 {/* image */}
 <figure className='overflow-hidden '>
     <img alt={name} className='w-1/2 pt-2 rounded-2xl h-70 object-cover hover:scale-110 transition duration-500' src={image}  />
@@ -29,9 +29,9 @@ const RecentListCard = ({data}) => {
     </div>
 
     {/* price section */}
-    <p className='text-lg font-semibold text-secondary text-center '>
+    <div className='text-lg font-semibold text-secondary text-center '>
         { price===0 ? "Free for Adoption":(<div className='flex justify-center gap-2'><p className='text-gray-400 opacity-85 line-through'>৳ {price-30}</p> ৳ {price}</div>)}
-    </p>
+    </div>
 
     {/* Hover Button */}
        <div className='relative h-12'>

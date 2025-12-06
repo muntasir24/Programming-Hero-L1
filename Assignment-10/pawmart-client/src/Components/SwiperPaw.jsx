@@ -13,7 +13,7 @@ import { Pagination, Navigation ,Autoplay} from 'swiper/modules';
 
 const SwiperPaw = () => {
   return (
-    <div className="w-full h-[450px] overflow-hidden shadow-lg">
+    <div className="w-full  h-[450px] overflow-hidden shadow-lg">
       <Swiper
         slidesPerView={1}
         spaceBetween={0}

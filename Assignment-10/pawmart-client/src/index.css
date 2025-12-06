@@ -23,6 +23,9 @@
     background-color: black;
   }
   .layout{
+    background-color: #000000;
+  }
+  .listcard{
     background-color: #0a212f;
   }
 }
@@ -34,4 +37,10 @@
 
 .my-swal-popup {
   z-index: 9999 !important; /* Higher than modals or other elements */
+}
+
+
+/* in your globals.css or tailwind.css if needed */
+.btn-primary {
+  @apply bg-primary text-white px-4 py-2 rounded shadow hover:bg-primary-dark transition;
 }
