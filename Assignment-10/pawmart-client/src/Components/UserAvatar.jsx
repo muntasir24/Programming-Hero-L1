@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 
 const UserAvatar = () => {
     const {user,SignOutUser}=useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
 const handleLogOut=()=>{
     SignOutUser();
 }  

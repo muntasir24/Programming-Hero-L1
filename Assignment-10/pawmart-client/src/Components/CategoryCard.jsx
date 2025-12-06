@@ -3,6 +3,7 @@ import pets from "../assets/pets.jpg";
 import petfood from "../assets/petFood.jpg";
 import petsAccs from "../assets/petacces.jpg";
 import petcare from "../assets/petcare.webp";
+import { PawPrint } from "lucide-react";
 
 const categories = [
   {
@@ -136,6 +137,9 @@ const CategoryCard = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="hidden card-4 opacity-50 md:flex justify-center items-center text-secondary">
+            <PawPrint size={180} ></PawPrint>
         </div>
       </div>
     </div>

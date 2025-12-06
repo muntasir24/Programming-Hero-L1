@@ -8,7 +8,7 @@ const HomeLayout = () => {
   return (
     <div  className="flex flex-col h-full min-h-screen layout bg-gray-200">
       <Navbar></Navbar>
-      <div className="flex-1 max-w-7xl mx-auto w-full px-2  min-h-screen"><Outlet></Outlet></div>
+      <div className="flex-1 max-w-7xl mx-auto w-full px-2  min-h-screen "><Outlet></Outlet></div>
       <Footer></Footer>
     </div>
   );

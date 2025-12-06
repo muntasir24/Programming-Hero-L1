@@ -10,8 +10,8 @@ const Navbar = () => {
   const [ischecked, setIsChecked] = useState(false);
   const authRef = useRef();
   const {loading,user}=useContext(AuthContext);
-  console.log(user);
-  console.log(loading);
+  // console.log(user);
+  // console.log(loading);
 
   const handleThemeToggle = () => {
     const newValue = !ischecked;
