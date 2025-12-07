@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useAxios from "../Hooks/useAxios";
 import RecentListCard from "./RecentListCard";
 import { Link } from "react-router";
+import Globalspinner from "../Spinner/Globalspinner";
 
 const RecentListing = () => {
   const axiosInstance = useAxios();
@@ -26,7 +27,7 @@ const RecentListing = () => {
   }, [axiosInstance]);
 
   // console.log(loading, recentitems);
-
+if(loading)return <Globalspinner></Globalspinner>
   return (
     <div className="mt-20">
       <h1 className="divider text-center font-bold text-2xl text-primary ">

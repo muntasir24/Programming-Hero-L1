@@ -5,7 +5,7 @@ import { Outlet } from "react-router";
 import ScrollToTop from "../Components/ScrollOnTop";
  import { Toaster } from 'react-hot-toast';
 const HomeLayout = () => {
-  const {loading} 
+ 
   
   return (
     <div  className="flex flex-col h-full min-h-screen layout bg-gray-200">

@@ -117,7 +117,7 @@ const handleDownload = () => {
     <tr>
     
       <td>{list?.productName}</td>
-      <td>{list?.buyerName}</td>
+      <td >{list?.buyerName}</td>
       <td>{list?.price}</td>
       <td>{list?.quantity}</td>
       <td>{list?.address}</td>

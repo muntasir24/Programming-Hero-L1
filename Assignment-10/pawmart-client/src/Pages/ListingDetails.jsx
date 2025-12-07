@@ -4,6 +4,8 @@ import useAxios from "../Hooks/useAxios";
 import { AuthContext } from "../Contexts/AuthContext";
 import toast from "react-hot-toast";
 import { Cat } from "lucide-react";
+import AuthModal from "../Components/AuthModal";
+import DetailsSkeleton from "../Spinner/DetailsSkeleton";
 
 const ListingDetails = () => {
   const { id } = useParams();
@@ -14,6 +16,7 @@ const ListingDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const [total, setTotal] = useState(0);
   const { user } = useContext(AuthContext);
+  const authref = useRef(null);
 
   // console.log(item.email,user.email);
   useEffect(() => {
@@ -32,7 +35,7 @@ const ListingDetails = () => {
     fetchItem();
   }, [axiosInstance, id]);
 
-  if (loadingInfo) return <p>loading....</p>;
+ if(loadingInfo) return <DetailsSkeleton></DetailsSkeleton>
 
   // increase quantity
   const handlePrice = (id) => {
@@ -52,7 +55,12 @@ const ListingDetails = () => {
 
   const handleOrderModalOpen = () => {
     // console.log(orderModalRef.current);
-    orderModalRef.current.showModal();
+     if (!user) {
+    authref.current.open();  // open login modal
+    return;
+  }else {
+      orderModalRef.current.showModal();
+    }
   };
   const handleCloseModal = () => {
     orderModalRef.current.close();
@@ -365,7 +373,9 @@ const ListingDetails = () => {
           )}
         </div>
       </div>
+      <AuthModal ref={authref}></AuthModal>
     </div>
+
   );
 };
 

@@ -54,7 +54,7 @@ const Navbar = () => {
       >
         Pet & Supplies
       </NavLink>
-      <NavLink
+      {user && <><NavLink
         className={({ isActive }) =>
           isActive ? "text-orange-500" : "hover:text-orange-500"
         }
@@ -77,7 +77,7 @@ const Navbar = () => {
         to={"/myorders"}
       >
         My Orders
-      </NavLink>
+      </NavLink></>}
     </div>
   );
   return (

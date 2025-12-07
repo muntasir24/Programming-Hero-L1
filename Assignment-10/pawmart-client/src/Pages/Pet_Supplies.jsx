@@ -6,12 +6,15 @@ import CategoryFilter from "../Components/CategoryFilter";
 import Price from "../Components/Price";
 import NoProductsFound from "../Errors/NoProductsFound";
 import { AuthContext } from "../Contexts/AuthContext";
+import Globalspinner from "../Spinner/Globalspinner";
+import SearchByName from "../Components/SearchByName";
 
 const Pet_Supplies = () => {
   const axiosInstance = useAxios();
   const [loading, setLoading] = useState(true);
   const [totitems, setotitems] = useState([]);
   const [error, setError] = useState(null);
+  const [name,setName]=useState("");
   const{category}=useContext(AuthContext);
 
   const [price,setPrice]=useState([0,0]);
@@ -30,6 +33,9 @@ const Pet_Supplies = () => {
       else if(!!price[0] || !!price[1]){
          url += `/price-range?min=${price[0]}&max=${price[1]}`;
       }
+      else if(name){
+        url+=`?name=${name}`
+      }
       
       const res = await axiosInstance.get(url);
       setotitems(res.data);
@@ -43,27 +49,32 @@ const Pet_Supplies = () => {
   };
 
   fetchListings();
-}, [category,axiosInstance,price]); // no need for axiosInstance if it is stable
+}, [category,axiosInstance,price,name]); // no need for axiosInstance if it is stable
 
 
-console.log(loading);
+
+
   return (
     <div className="">
       <SearchProduct></SearchProduct>
-
+        <SearchByName setName={setName}></SearchByName>
       <div className="flex py-5">
-        <div className="right   w-[40%] space-y-4 ">
+        <div className="right hidden md:flex flex-col  w-[40%] space-y-4 ">
           <p className="text-gray-500 text-xl opacity-80 font-semibold mb-3">
             Filter By
           </p>
           <CategoryFilter ></CategoryFilter>
           <Price setPrice={setPrice}></Price>
         </div>
-      <div className={`grid ${totitems.length && "md:grid-cols-2 "}gap-3 w-[70%] `}>
+      {
+        loading ? (<div className="w-[70%]">
+          <Globalspinner></Globalspinner>
+           </div>):(<div className={`grid ${totitems.length && "md:grid-cols-2 "}gap-3 md:w-[70%] `}>
           { totitems.length ? <>{totitems.map((data) => (
             <RecentListCard key={data._id} data={data}></RecentListCard>
           ))}</> : <NoProductsFound></NoProductsFound>}
-        </div>
+        </div>) 
+      }
       </div>
     </div>
   );

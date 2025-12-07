@@ -11,6 +11,7 @@ import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Profile from "../Pages/Profile";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -28,42 +29,24 @@ const router = createBrowserRouter([
       },
       {
         path :'addlistings',
-        element:<AddListing></AddListing>
+        element:<PrivateRoute><AddListing></AddListing></PrivateRoute>
       },
       {
        path:'mylistings',
-       element:<MyListings></MyListings>
+       element:<PrivateRoute><MyListings></MyListings></PrivateRoute>
       },
       {
         path:'myorders',
-        element:<MyOrders></MyOrders>
+        element:<PrivateRoute><MyOrders></MyOrders></PrivateRoute>
       },
       {
         path:'listingDetails/:id',
         element : <ListingDetails></ListingDetails>
       } ,
-      {
-        path:'myprofile',
-        element:<Profile></Profile>
-      }
+      
   
     ]
 
-  },
-  {
-    path :"/auth",
-    element :<AuthLayout></AuthLayout>,
-    errorElement :<Error404></Error404>,
-    children :[
-      {
-        path:'login',
-        element:<Login></Login>
-      },
-      {
-        path:'register',
-        element:<Register></Register>
-      }
-    ]
   }
 ]);
 
