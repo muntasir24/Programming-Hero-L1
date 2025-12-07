@@ -86,7 +86,7 @@ catch(err){
     if (!mylists.length) {
       const timer = setTimeout(() => {
         setShowEmpty(true);
-      }, 500); // show spinner for 500ms
+      }, 800); // show spinner for 500ms
 
       return () => clearTimeout(timer);
     } else {

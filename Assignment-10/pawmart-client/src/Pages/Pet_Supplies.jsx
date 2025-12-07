@@ -8,6 +8,7 @@ import NoProductsFound from "../Errors/NoProductsFound";
 import { AuthContext } from "../Contexts/AuthContext";
 import Globalspinner from "../Spinner/Globalspinner";
 import SearchByName from "../Components/SearchByName";
+import SkeletonSearch from "../Spinner/SkeletonSearch";
 
 const Pet_Supplies = () => {
   const axiosInstance = useAxios();
@@ -67,8 +68,8 @@ const Pet_Supplies = () => {
           <Price setPrice={setPrice}></Price>
         </div>
       {
-        loading ? (<div className="w-[70%]">
-          <Globalspinner></Globalspinner>
+        loading  ? (<div className="w-[70%]">
+          <SkeletonSearch></SkeletonSearch>
            </div>):(<div className={`grid ${totitems.length && "md:grid-cols-2 "}gap-3 md:w-[70%] `}>
           { totitems.length ? <>{totitems.map((data) => (
             <RecentListCard key={data._id} data={data}></RecentListCard>
