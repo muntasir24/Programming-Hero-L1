@@ -21,7 +21,7 @@ const Login = ({closeModal}) => {
     const email=e.target.email.value;
    SignInUser(email,pass)
    .then(data=>{
-    console.log(data.user);
+    // console.log(data.user);
     closeModal();
    })
    .catch(error=>{
@@ -46,7 +46,7 @@ const Login = ({closeModal}) => {
     SignInUserGoogle()
     .then(res=>{
         setUser(res.user);
-        console.log(res.user);
+        // console.log(res.user);
         closeModal();
     })
   }

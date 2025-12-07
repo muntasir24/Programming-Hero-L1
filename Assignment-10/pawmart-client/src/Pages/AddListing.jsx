@@ -29,7 +29,7 @@ const AddListing = () => {
 
     try {
       const res = await axiosInstance.post("/lsitings", listing);
-      console.log(res);
+    //   console.log(res);
       if (res.data.insertedId) {
         toast.success(" New List Added");
         e.target.reset();

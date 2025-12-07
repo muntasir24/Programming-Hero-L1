@@ -5,6 +5,7 @@ import MylListCard from "../Components/MylListCard";
 import Empty from "../Components/Empty";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
+import Globalspinner from "../Spinner/Globalspinner";
 
 const MyListings = () => {
   const axiosInstance = useAxios();
@@ -16,6 +17,7 @@ const { user } = useContext(AuthContext);
  const [pet, SetPet] = useState(false);
   const [price, setPrice] = useState("");
 const [Item,setItem]=useState(null);
+ const [showEmpty, setShowEmpty] = useState(false);
 
 
   useEffect(() => {
@@ -39,7 +41,7 @@ const [Item,setItem]=useState(null);
 // console.log(item);
 setItem(item);
 setPrice(item?.price);
-console.log(modalref.current);
+// console.log(modalref.current);
 modalref.current.showModal();
   }
 
@@ -79,13 +81,29 @@ catch(err){
 
   };
 
-console.log(loading);
+
+  useEffect(() => {
+    if (!mylists.length) {
+      const timer = setTimeout(() => {
+        setShowEmpty(true);
+      }, 500); // show spinner for 500ms
+
+      return () => clearTimeout(timer);
+    } else {
+      setShowEmpty(false); // reset if list is not empty
+    }
+  }, [mylists]);
+
+  if ((!mylists.length && !showEmpty) || loading ) return <Globalspinner />;
+
+  if (!mylists.length && showEmpty) return <Empty />;
+
   return (
     <div>
       <h1 className=" text-center p-5 text-4xl font-bold text-primary">
         Your Added Lists
       </h1>
-     {mylists.length ? ( <div className="overflow-x-auto">
+     <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead>
@@ -102,7 +120,7 @@ console.log(loading);
             ))}
           </tbody>
         </table>
-      </div>) : <Empty></Empty>}
+      </div>
 
        <dialog ref={modalref} className="modal">
         <div className="modal-box">

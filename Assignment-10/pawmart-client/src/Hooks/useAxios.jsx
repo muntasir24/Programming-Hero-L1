@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const axiosInstance=axios.create({
-    baseURL :'http://localhost:3000'
+    baseURL :'https://pawmart-server-a10.vercel.app'
 })
 
 const useAxios=()=>{

@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import cart from "../assets/empty-cart.webp"
 import { Link } from 'react-router';
+import { AuthContext } from '../Contexts/AuthContext';
+
+
+
 const Empty = () => {
+    
+
     return (
         <div className='flex items-center justify-center flex-col gap-5'>
             <img src={cart} alt="" />

@@ -25,7 +25,7 @@ const ListingDetails = () => {
       try {
         const res = await axiosInstance.get(`/listings/${id}`);
         setItem(res.data);
-        console.log(res.data);
+        // console.log(res.data);
         setTotal(res?.data?.price);
       } catch (err) {
         console.log(err);
@@ -93,11 +93,11 @@ const ListingDetails = () => {
       additionalNotes,
       productId: id,
     };
-    console.log(newOrder);
+    // console.log(newOrder);
 
     try {
       const res = await axiosInstance.post("/orders", newOrder);
-      console.log(res.data);
+      // console.log(res.data);
       if (res.data.insertedId) {
         toast.success("Order Placed Succesfully");
         handleCloseModal();

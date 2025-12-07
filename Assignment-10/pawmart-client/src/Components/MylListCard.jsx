@@ -2,9 +2,10 @@ import React from "react";
 import { Download, SquarePen, Trash } from "lucide-react";
 import useAxios from "../Hooks/useAxios";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 const MylListCard = ({ list, setMylits,handleEdit }) => {
   const axiosInstance = useAxios();
- 
+ const axiosSecure=useAxiosSecure();
 const item={
    image: list?.image,
    name:list?.name,
@@ -30,7 +31,7 @@ const item={
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const response = await axiosInstance.delete(`/listings/${id}`);
+          const response = await axiosSecure.delete(`/listings/${id}`);
           console.log("Deleted successfully:", response.data);
           // Optionally update state after deletion
           setMylits((prev) => prev.filter((item) => item._id !== id));

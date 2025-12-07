@@ -4,12 +4,14 @@ import { AuthContext } from "../Contexts/AuthContext";
 
 import OrderCard from "../Components/OrderCard";
 import Empty from "../Components/Empty";
+import Globalspinner from "../Spinner/Globalspinner";
 
 const MyOrders = () => {
   const axiosInstance = useAxios();
   const [loading, setLoading] = useState(false);
   const [myorders, serMyorders] = useState([]);
   const { user } = useContext(AuthContext);
+  const [showEmpty, setShowEmpty] = useState(false);
 
   useEffect(() => {
     const fetchlist = async () => {
@@ -17,7 +19,7 @@ const MyOrders = () => {
         const mylisting = await axiosInstance.get(
           `/orders?email=${user?.email}`
         );
-        console.log(mylisting.data);
+        // console.log(mylisting.data);
         serMyorders(mylisting.data);
       } catch (err) {
         console.log(err);
@@ -27,7 +29,21 @@ const MyOrders = () => {
     };
     fetchlist();
   }, [user, axiosInstance]);
+useEffect(() => {
+    if (!myorders.length) {
+      const timer = setTimeout(() => {
+        setShowEmpty(true);
+      }, 500); // show spinner for 500ms
 
+      return () => clearTimeout(timer);
+    } else {
+      setShowEmpty(false); // reset if list is not empty
+    }
+  }, [myorders]);
+
+  if ((!myorders.length && !showEmpty) || loading ) return <Globalspinner />;
+
+  if (!myorders.length && showEmpty) return <Empty />;
   return (
     <div>
       <h1 className=" text-center p-5 text-4xl font-bold text-primary">
@@ -35,7 +51,7 @@ const MyOrders = () => {
       </h1>
 
     {
-      myorders.length ? (  <div className="overflow-x-auto">
+     <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead>
@@ -56,7 +72,7 @@ const MyOrders = () => {
             ))}
           </tbody>
         </table>
-      </div>): <Empty></Empty>
+      </div>
     }
     </div>
   );
