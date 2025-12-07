@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { Cat } from "lucide-react";
 import AuthModal from "../Components/AuthModal";
 import DetailsSkeleton from "../Spinner/DetailsSkeleton";
+import { motion } from "framer-motion";
 
 const ListingDetails = () => {
   const { id } = useParams();
@@ -111,13 +112,25 @@ const ListingDetails = () => {
     <div className="max-w-5xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden  mt-10 p-6 listcard ">
       <div className="flex flex-col md:flex-row gap-8">
         {/* IMAGE SECTION */}
-        <div className="md:w-1/2 w-full">
-          <img
-            src={item?.image}
-            alt={item?.name}
-            className="w-full h-full object-cover rounded-xl"
-          />
-        </div>
+       <motion.div
+  className="md:w-1/2 w-full h-96 rounded-xl overflow-hidden shadow-lg cursor-pointer"
+  style={{ perspective: 1000 }}
+  initial={{ rotateY: 0 }}             // start from 0
+  whileHover={{
+    rotateY: 15,                        // small tilt on hover
+    scale: 1.05,
+    boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+  }}
+  animate={{ rotateY: 180 }}            // rotate once when in view
+  transition={{ duration: 0.8, ease: "easeInOut" }}
+  viewport={{ once: true }}             // triggers only once
+>
+  <img
+    src={item?.image}
+    alt={item?.name}
+    className="w-full h-full object-cover rounded-xl"
+  />
+</motion.div>
 
         {/* DETAILS SECTION */}
         <div className="md:w-1/2 w-full space-y-5 flex flex-col ">
@@ -375,6 +388,7 @@ const ListingDetails = () => {
       </div>
       <AuthModal ref={authref}></AuthModal>
     </div>
+     
 
   );
 };

@@ -5,7 +5,7 @@ const Footer = () => {
         <div>
             <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content grid-rows-2 p-10">
   <nav>
-    <h6 className="footer-title">Services</h6>
+    <h6 className="footer-title">PawMart connects local pet owners and buyers for adoption and pet care products.</h6>
     <a className="link link-hover">Branding</a>
     <a className="link link-hover">Design</a>
     <a className="link link-hover">Marketing</a>

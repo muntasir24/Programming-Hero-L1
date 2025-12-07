@@ -32,8 +32,6 @@ const AddListing = () => {
       console.log(res);
       if (res.data.insertedId) {
         toast.success(" New List Added");
-
-        toast.success("New List Added");
         e.target.reset();
       }
     } catch (err) {

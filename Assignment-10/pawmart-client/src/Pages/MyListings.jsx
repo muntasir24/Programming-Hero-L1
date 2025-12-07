@@ -4,9 +4,11 @@ import { AuthContext } from "../Contexts/AuthContext";
 import MylListCard from "../Components/MylListCard";
 import Empty from "../Components/Empty";
 import toast from "react-hot-toast";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 const MyListings = () => {
   const axiosInstance = useAxios();
+  const axiosSecure=useAxiosSecure();
   const [loading, setLoading] = useState(false);
   const [mylists, setMylits] = useState([]);
   const modalref=useRef(null);
@@ -60,7 +62,7 @@ modalref.current.showModal();
    
 
 try{
-const res= await  axiosInstance.patch(`/listings/${id}`,listing);
+const res= await  axiosSecure.patch(`/listings/${id}`,listing);
 
 if(res.data){
     modalref.current.close();

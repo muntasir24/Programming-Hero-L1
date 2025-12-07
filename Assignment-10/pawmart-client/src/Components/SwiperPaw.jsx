@@ -17,9 +17,9 @@ const SwiperPaw = () => {
       <Swiper
         slidesPerView={1}
         spaceBetween={0}
-        speed={1100}
+        speed={1000}
         autoplay={{
-          delay:1400,
+          delay:1300,
           disableOnInteraction:false
         }}
         loop={true}
