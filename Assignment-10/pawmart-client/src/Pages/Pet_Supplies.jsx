@@ -1,41 +1,69 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import useAxios from "../Hooks/useAxios";
 import RecentListCard from "../Components/RecentListCard";
-import Search from "../Components/Search";
+import SearchProduct from "../Components/SearchProduct";
+import CategoryFilter from "../Components/CategoryFilter";
+import Price from "../Components/Price";
+import NoProductsFound from "../Errors/NoProductsFound";
+import { AuthContext } from "../Contexts/AuthContext";
 
 const Pet_Supplies = () => {
   const axiosInstance = useAxios();
   const [loading, setLoading] = useState(true);
   const [totitems, setotitems] = useState([]);
   const [error, setError] = useState(null);
+  const{category}=useContext(AuthContext);
+
+  const [price,setPrice]=useState([0,0]);
+
+  // console.log("price id", price); /listings/price-range
+//  console.log( !!price[0], !!price[1]);
+//  console.log(price[0],price[1]);
   useEffect(() => {
-    const fetchList = async () => {
-      try {
-        const res = await axiosInstance.get("/listings");
-        setotitems(res.data);
-      } catch (err) {
-        setError("Failed to Load Listings");
-        console.log(err);
-      } finally {
-        setLoading(false);
+  const fetchListings = async () => {
+    try {
+      setLoading(true);
+      let url = "/listings";
+      if (category) {
+        url += `?category=${category}`;
       }
-    };
-    fetchList();
-  }, [axiosInstance]);
+      else if(!!price[0] || !!price[1]){
+         url += `/price-range?min=${price[0]}&max=${price[1]}`;
+      }
+      
+      const res = await axiosInstance.get(url);
+      setotitems(res.data);
+      setError(""); // clear previous errors
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load listings");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchListings();
+}, [category,axiosInstance,price]); // no need for axiosInstance if it is stable
+
+
+console.log(loading);
   return (
-    <div>
-  <Search></Search>
+    <div className="">
+      <SearchProduct></SearchProduct>
 
-
-      <div className="flex">
-           <div className="right border-2  w-1/2">
-
-           </div>
-        <div className="grid md:grid-cols-2 gap-3 ">
-        {totitems.map((data) => (
-          <RecentListCard key={data._id} data={data}></RecentListCard>
-        ))}
-      </div>
+      <div className="flex py-5">
+        <div className="right   w-[40%] space-y-4 ">
+          <p className="text-gray-500 text-xl opacity-80 font-semibold mb-3">
+            Filter By
+          </p>
+          <CategoryFilter ></CategoryFilter>
+          <Price setPrice={setPrice}></Price>
+        </div>
+      <div className={`grid ${totitems.length && "md:grid-cols-2 "}gap-3 w-[70%] `}>
+          { totitems.length ? <>{totitems.map((data) => (
+            <RecentListCard key={data._id} data={data}></RecentListCard>
+          ))}</> : <NoProductsFound></NoProductsFound>}
+        </div>
       </div>
     </div>
   );

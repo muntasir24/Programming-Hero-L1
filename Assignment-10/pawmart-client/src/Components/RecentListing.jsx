@@ -25,7 +25,7 @@ const RecentListing = () => {
     fetchListing();
   }, [axiosInstance]);
 
-  console.log(loading, recentitems);
+  // console.log(loading, recentitems);
 
   return (
     <div className="mt-20">

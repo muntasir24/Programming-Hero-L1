@@ -4,6 +4,9 @@ import petfood from "../assets/petFood.jpg";
 import petsAccs from "../assets/petacces.jpg";
 import petcare from "../assets/petcare.webp";
 import { PawPrint } from "lucide-react";
+import { useContext } from "react";
+import { AuthContext } from "../Contexts/AuthContext";
+import { Link, useNavigate } from "react-router";
 
 const categories = [
   {
@@ -35,6 +38,8 @@ const categories = [
 ];
 // console.log();
 const CategoryCard = () => {
+  const {setCategory}=useContext(AuthContext);
+  const navigate=useNavigate();
   return (
     <div className="grid lg:grid-cols-2 gap-3 ">
       <div className="flex ">
@@ -54,9 +59,9 @@ const CategoryCard = () => {
               </p>
               <p className="text-2xl font-bold">{categories[0].description}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">
+                <Link  onClick={() => setCategory("Pets")} to={"/petsSupplies"} className="btn btn-primary">
                   {categories[0].title}
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -80,9 +85,9 @@ const CategoryCard = () => {
                 </p>
                 <p className="text-xl font-bold">{categories[1].description}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">
+                  <Link onClick={() => setCategory("Pet Food")} to={"/petsSupplies"}  className="btn btn-primary">
                     {categories[1].title}
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -105,9 +110,9 @@ const CategoryCard = () => {
                 </p>
                 <p className="text-xl font-bold">{categories[2].description}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">
+                  <Link onClick={() => setCategory(categories[2].title)} to={"/petsSupplies"} className="btn btn-primary">
                     {categories[2].title}
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -130,9 +135,9 @@ const CategoryCard = () => {
                 </p>
                 <p className="text-xl font-bold">{categories[3].description}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">
+                  <Link onClick={() => setCategory(categories[3].title)} to={"/petsSupplies"} className="btn btn-primary">
                     {categories[3].title}
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

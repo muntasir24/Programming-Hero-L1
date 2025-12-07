@@ -7,7 +7,7 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 import { BiSolidError } from "react-icons/bi";
 
 const Register = ({ closeModal }) => {
-const{ SignUpUser,setUser, SignInUserGoogle,updateUser,loading}=useContext(AuthContext);
+const{ SignUpUser,setUser, SignInUserGoogle,updateUser,loading,user, setLoading}=useContext(AuthContext);
 const [toggle,setToggle]=useState(true);
 const [err,setErr]=useState("");
 const [password,setPassword]=useState("");
@@ -67,7 +67,7 @@ const handleEmailSignUp = (e) => {
             text: "Account created successfully",
             icon: "success",
           });
-
+             setLoading(false);
           closeModal();  // only success close
         });
     })
@@ -99,7 +99,7 @@ const handleEmailSignUp = (e) => {
    
 };
 
-
+// console.log(user);
     return (
        <div className='space-y-4'>
             {/* <p className='text-black'>Wrong pass</p> */}

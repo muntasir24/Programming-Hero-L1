@@ -35,7 +35,7 @@ const RecentListCard = ({data}) => {
 
     {/* Hover Button */}
        <div className='relative h-12'>
-         <Link
+         <Link to={`/listingDetails/${_id}`}
          
           className="text-center absolute left-1/2  -translate-x-1/2 opacity-0  group-hover:opacity-100 
                      bg-primary text-white px-5 py-2  text-sm shadow-lg

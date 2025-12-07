@@ -44,7 +44,7 @@ const AuthModal = forwardRef((props, ref) => {
 
         {/* Content */}
         {tab === "login" && (
-          <Login></Login>
+          <Login closeModal={()=>modalRef.current.close()}></Login>
         )}
 
         {tab === "register" && (
