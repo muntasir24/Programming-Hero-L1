@@ -1,11 +1,65 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from "react";
+import useAxios from "../Hooks/useAxios";
+import { AuthContext } from "../Contexts/AuthContext";
+
+import OrderCard from "../Components/OrderCard";
+import Empty from "../Components/Empty";
 
 const MyOrders = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  const axiosInstance = useAxios();
+  const [loading, setLoading] = useState(false);
+  const [myorders, serMyorders] = useState([]);
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    const fetchlist = async () => {
+      try {
+        const mylisting = await axiosInstance.get(
+          `/orders?email=${user?.email}`
+        );
+        console.log(mylisting.data);
+        serMyorders(mylisting.data);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchlist();
+  }, [user, axiosInstance]);
+
+  return (
+    <div>
+      <h1 className=" text-center p-5 text-4xl font-bold text-primary">
+        Your Orders
+      </h1>
+
+    {
+      myorders.length ? (  <div className="overflow-x-auto">
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Buyer Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Address</th>
+              <th>Date</th>
+              <th>Phone</th>
+              <th>Download Report </th>
+            </tr>
+          </thead>
+          <tbody>
+            {myorders.map((list) => (
+              <OrderCard key={list._id} list={list}></OrderCard>
+            ))}
+          </tbody>
+        </table>
+      </div>): <Empty></Empty>
+    }
+    </div>
+  );
 };
 
 export default MyOrders;

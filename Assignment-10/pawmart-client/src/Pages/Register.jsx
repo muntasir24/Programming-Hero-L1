@@ -48,6 +48,7 @@ const handleEmailSignUp = (e) => {
   const name = e.target.name.value;
   const email = e.target.email.value;
   const pass = e.target.pass.value;
+  const photo=e.target.photo.value;
 
   if(err.length)return;
   setErr('');
@@ -58,7 +59,7 @@ const handleEmailSignUp = (e) => {
 
       return updateUser({ displayName: name })
         .then(() => {
-          setUser({ ...userRef, displayName: name });
+          setUser({ ...userRef, displayName: name ,photoURL:photo });
 
           Swal.fire({
          
@@ -107,6 +108,7 @@ const handleEmailSignUp = (e) => {
 
             <form  onSubmit={handleEmailSignUp}>
                 <input name='name' type="text" placeholder="Full Name" className="input text-base-content font-bold input-bordered w-full mb-4 " />
+                <input name='photo' type="text" placeholder=" photo URL" className="input text-base-content font-bold input-bordered w-full mb-4 " />
                 <input name='email' type="email" placeholder="Email Address" className="input text-base-content font-bold input-bordered w-full mb-4 " />
             <div  className=' relative '>
                 <input name='pass' defaultValue={password} required onChange={handlePassOnChange}  type={toggle ? "password" :"text"} placeholder="Password" className="input text-base-content font-bold input-bordered w-full mb-3" />
