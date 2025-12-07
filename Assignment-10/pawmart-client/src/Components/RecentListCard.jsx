@@ -12,7 +12,7 @@ const RecentListCard = ({data}) => {
         
      <motion.div  
    
-     className='  group relative card bg-cyan-50  listcard hover:shadow-xl hover:-translate-y-1 transition-all duration-300 '>
+     className='  group relative card bg-transparent hover:bg-white  listcard hover:shadow-xl hover:-translate-y-1 transition-all duration-300 '>
 {/* image */}
 <figure className='overflow-hidden '>
     <img alt={name} className='w-1/2 pt-2 rounded-2xl h-70 object-cover hover:scale-110 transition duration-500' src={image}  />

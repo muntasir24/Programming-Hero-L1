@@ -103,7 +103,7 @@ catch(err){
       <h1 className=" text-center p-5 text-4xl font-bold text-primary">
         Your Added Lists
       </h1>
-     <div className="overflow-x-auto">
+     <div className="overflow-x-auto font-semibold text-2xl text-gray-600">
         <table className="table">
           {/* head */}
           <thead>

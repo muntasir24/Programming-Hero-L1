@@ -77,6 +77,7 @@ const handleEmailSignUp = (e) => {
 
       if (err.code === "auth/email-already-in-use") {
       closeModal();
+       setLoading(false);
          Swal.fire({
   
   title: "Error!",

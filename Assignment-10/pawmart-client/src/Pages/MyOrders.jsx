@@ -51,7 +51,7 @@ useEffect(() => {
       </h1>
 
     {
-     <div className="overflow-x-auto">
+     <div className="overflow-x-auto font-semibold text-lg text-gray-600">
         <table className="table">
           {/* head */}
           <thead>
