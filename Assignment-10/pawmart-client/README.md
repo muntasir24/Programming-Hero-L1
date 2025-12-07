@@ -1,16 +1,67 @@
-# React + Vite
+# PawMart 🐾
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PawMart is a full-stack web application for managing and exploring pet-related products and services. Users can add, edit, and delete listings for pets, food, accessories, and care products. The app provides a smooth user experience with instant updates, conditional forms, and PDF generation for orders.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Overview
+PawMart allows users to:
+- Add listings for pets or pet products
+- Edit or delete existing listings
+- Handle orders and generate PDFs for them
+- See all their added listings in a table with instant UI updates
+- Conditional form inputs (e.g., price automatically set to 0 for pets)
 
-## Expanding the ESLint configuration
+The backend is powered by **Node.js**, **Express**, and **MongoDB**, while the frontend uses **React.js**, **TailwindCSS**, and **SweetAlert2** for alerts.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+- **User Authentication** (login/signup)
+- **CRUD Operations** for Listings
+- **Conditional Form Logic** (Pets category price auto-set)
+- **Instant UI Updates** on Edit/Delete without page reload
+- **PDF Generation** for orders using `jspdf` and `jspdf-autotable`
+- **Responsive UI** for mobile and desktop
+- **SweetAlert2** confirmation dialogs for deletions
+
+---
+
+## Technologies Used
+- **Frontend:** React, TailwindCSS, Lucide Icons, SweetAlert2
+- **Backend:** Node.js, Express
+- **Database:** MongoDB (via Mongoose)
+- **HTTP Requests:** Axios
+- **PDF Generation:** jsPDF, jsPDF-AutoTable
+- **State Management:** React Context API
+
+---
+
+## Screenshots
+### My Listings Page
+![My Listings](./screenshots/my-listings.png)
+
+### Add/Edit Listing Modal
+![Add/Edit Listing](./screenshots/add-edit-listing.png)
+
+### Orders PDF Download
+![Orders PDF](./screenshots/orders-pdf.png)
+
+---
+
+## Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/pawmart.git
