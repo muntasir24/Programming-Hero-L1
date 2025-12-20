@@ -4,6 +4,9 @@ require('dotenv').config(); // Ensure dotenv is required at the top
 const admin = require("firebase-admin");
 const app = express();
 const port = process.env.PORT || 3000;
+const stripe = require('stripe')(process.env.STRIPE_SECRECT);
+const crypto = require('crypto');
+
 
 // Corrected Base64 Decoding
 const decoded = Buffer.from(process.env.FIREBASE_SERVICE_KEY, "base64").toString("utf8");
@@ -118,6 +121,87 @@ app.patch('/update/user/role-status', verifyFirebaseToken, async (req, res) => {
     res.status(500).send({ message: "Internal Server Error" });
   }
 });
+
+app.get('/my-request', verifyFirebaseToken, async (req, res) => {
+  const email = req.decoded.email;
+  
+  // 1. Convert query params to Numbers and provide defaults
+  const size = parseInt(req.query.size) || 10;
+  const page = parseInt(req.query.page) || 0; 
+
+ const status = req.query.status;
+const query = { requesterEmail: email };
+if (status) {
+    query.status = status; // Only add status to query if it exists
+}
+
+  // 2. Calculate skip (e.g., Page 1 with size 10 skips 10 items)
+  const skipValue = size * page;
+
+  try {
+    const cursor = requestsCollection
+      .find(query)
+      .sort({ createdAt: -1 }) // Recommended: show newest requests first
+      .skip(skipValue)
+      .limit(size);
+
+    const result = await cursor.toArray();
+    
+    // 3. Get total count for the frontend to calculate total pages
+    const totalRequest = await requestsCollection.countDocuments(query);
+
+    res.send({
+      request: result,
+      totalRequest: totalRequest
+    });
+  } catch (error) {
+    res.status(500).send({ message: "Error fetching requests", error });
+  }
+});
+
+app.post('/create-payment-checkout', async (req, res) => {
+  try {
+    const { donate, donorEmail ,donorName} = req.body;
+
+    // Validation
+    if (!donate || isNaN(donate)) {
+      return res.status(400).send({ message: "Invalid amount" });
+    }
+
+    const session = await stripe.checkout.sessions.create({
+      line_items: [
+        {
+          price_data: {
+            currency: 'usd', // Use 'bdt' if you want, but Stripe supports 'usd' better for testing
+            unit_amount: parseInt(donate) * 100, // Stripe expects cents ($10 = 1000)
+             product_data: {
+              name: 'Blood Donation Support',
+              description: 'Thank you for your life-saving contribution.',
+            },
+          },
+          quantity: 1,
+        },
+      ],
+      mode: 'payment',
+      
+      // We pass the email to metadata so we can find it later
+      metadata: {
+        donorName:donorName
+      },
+      customer_email:donorEmail,
+      // Stripe will redirect here after success/cancel
+      success_url:`${process.env.CLIENT_URL}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url:`${process.env.CLIENT_URL}/payment-cancel`
+
+    });
+
+    res.send({ url: session.url });
+  } catch (error) {
+    console.error("Stripe Error:", error.message);
+    res.status(500).send({ error: error.message });
+  }
+});
+
 
     console.log("Connected to MongoDB!");
   } finally {
