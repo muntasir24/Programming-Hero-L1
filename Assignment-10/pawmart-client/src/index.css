@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import "tailwindcss";
+ @plugin "daisyui" {
+   /* themes: light --default; */
+ }
+
+
+ @plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #4e2d69;
+  --color-secondary: #23a683;
+  
+}
+
+[data-theme="dark"] {
+  .my-btn {
+    background-color: #0a212f;
+    color: aliceblue;
+  }
+  .my-bg{
+    background-color: black;
+  }
+  .layout{
+    background-color: #000000;
+  }
+  .listcard{
+    background-color: #0a212f;
+  }
+}
+
+
+*{
+  font-family: "Nunito", sans-serif;
+}
+
+
+
+

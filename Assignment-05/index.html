@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="hind-madurai bg-[#41FF6B]/10 h-full  pt-30 md:pt-18">
+  <!-- navbar -->
+   <nav  class="fixed top-0 left-0 w-full z-50 ">
+    <div class="navbar bg-base-100 shadow-sm flex flex-col md:flex-row  justify-between ">
+  <div class="flex  ">
+    <div class="flex ml-5 ">
+        <img src="./assets/logo.png" alt="" class="w-10 h-auto object-contain mr-3">
+    <p class=" text-[#006747] text-xl font-bold">Emergency <br> Service</p>
+    </div>
+  </div>
+  <div class=" flex gap-6  mt-3 md:mt-0 ">
+<button class="btn w-20  rounded-4xl bg-[#41FF6B]/10"><P id="love_cnt">0</P> <img src="./assets/heart.png" alt="" class="w-5"></button>
+<button class="btn w-20 rounded-4xl bg-[#41FF6B]/10"><P id="coin_cnt">100</P> <img src="./assets/coin.png" alt="" class="w-5"></button>
+<button class="btn w-20 rounded-4xl mr-5 bg-[#00A63E]"><p class="text-white" id="copy_cnt">0</p> <p class="text-white"> Copy</p></button>
+  </div>
+
+</div>
+   </nav>
+
+<!-- bannar section  -->
+<section class=" bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] banner  w-full bg-green-900 max-h-[260px] p-4 ">
+<div class="inside ">
+
+    <img src="./assets/logo.png" alt="" class="mx-auto w-30 ">
+<p class="text-white font-bold text-center text-2xl mt-5">জরুরি সেবা ডিরেক্টরি</p>
+<p class="text-white text-center mt-5">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+
+</div>
+
+</section>
+
+<!-- hero section -->
+ <section class="hero flex flex-col-reverse md:flex-row   p-5 gap-7 mt-5 items-stretch ">
+<div class="cards  w-full  md:w-9/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 ">
+
+ <div id="national" class="  p-6 bg-white rounded-2xl   drop-shadow-lg">
+     <div>
+         <div class="flex justify-between items-center   mb-3">
+        <img src="./assets/emergency.png" alt="" class="w-9">
+       <button class=" love-btn btn w-0 bg-white border-0"> <i class="fa-regular fa-heart"></i></button>
+      </div>
+      <p class="font-semibold text-xl">জাতীয় জরুরি সেবা</p>
+      <p>National Emergency</p>
+      <p class="text-2xl font-bold mt-3">999</p>
+      <div class="badge badge-ghost bg-[#F2F2F2] text-[#5C5C5C]">সার্বজনীন</div>
+      
+    <div class="flex justify-between mt-2   gap-2">
+          <button class="btn text-[#5C5C5C] w-1/2 "><i class="fa-regular fa-copy"></i>Copy</button>
+      <button class="btn btn-secondary bg-[#00A63E] text-white w-1/2 border-0 shadow-none"> <i class="fa-solid fa-phone"></i>Call</button>
+    </div>
+     </div>
+
+ </div>  
+ <div id="police" class="  p-6 bg-white rounded-2xl  drop-shadow-lg">
+     <div>
+         <div class="flex justify-between items-center   mb-3">
+        <img src="./assets/police.png" alt="" class="w-9">
+       <button class=" love-btn btn w-0 bg-white border-0"> <i class="fa-regular fa-heart"></i></button>
+      </div>
+      <p class="font-semibold text-xl">পুলিশ</p>
+      <p>Police</p>
+      <p class="text-2xl font-bold mt-3">999</p>
+      <div class="badge badge-ghost bg-[#F2F2F2] text-[#5C5C5C]">পুলিশ</div>
+      
+    <div class="flex justify-between mt-2   gap-2">
+          <button class="btn text-[#5C5C5C] w-1/2 "><i class="fa-regular fa-copy"></i>Copy</button>
+      <button class="btn btn-secondary bg-[#00A63E] text-white w-1/2 border-0 shadow-none"> <i class="fa-solid fa-phone"></i>Call</button>
+    </div>
+     </div>
+
+ </div>  
+ <div id="fire" class="  p-6 bg-white rounded-2xl  drop-shadow-lg">
+     <div>
+         <div class="flex justify-between items-center   mb-3">
+        <img src="./assets/fire-service.png" alt="" class="w-9">
+       <button  class=" love-btn btn w-0 bg-white border-0"> <i class="fa-regular fa-heart"></i></button>
+      </div>
+      <p class="font-semibold text-xl">ফায়ার সার্ভিস</p>
+      <p>Fire Service</p>
+      <p class="text-2xl font-bold mt-3">999</p>
+      <div class="badge badge-ghost bg-[#F2F2F2] text-[#5C5C5C]">ফায়ার</div>
+      
+    <div class="flex justify-between mt-2   gap-2">
+          <button class="btn text-[#5C5C5C] w-1/2 "><i class="fa-regular fa-copy"></i>Copy</button>
+      <button class="btn btn-secondary bg-[#00A63E] text-white w-1/2 border-0 shadow-none"> <i class="fa-solid fa-phone"></i>Call</button>
+    </div>
+     </div>
+
+ </div>  
+ <div id="ambulance" class="  p-6 bg-white rounded-2xl  drop-shadow-lg">
+     <div>
+         <div class="flex justify-between items-center   mb-3">
+        <img src="./assets/ambulance.png" alt="" class="w-9">
+       <button  class=" love-btn btn w-0 bg-white border-0"> <i class="fa-regular fa-heart"></i></button>
+      </div>
+      <p class="font-semibold text-xl">অ্যাম্বুলেন্স</p>
+      <p>Ambulance</p>
+      <p class="text-2xl font-bold mt-3">1994-999999</p>
+      <div class="badge badge-ghost bg-[#F2F2F2] text-[#5C5C5C]">স্বাস্থ্য</div>
+      
+    <div class="flex justify-between mt-2   gap-2">
+          <button class="btn text-[#5C5C5C] w-1/2 "><i class="fa-regular fa-copy"></i>Copy</button>
+      <button class="btn btn-secondary bg-[#00A63E] text-white w-1/2 border-0 shadow-none"> <i class="fa-solid fa-phone"></i>Call</button>
+    </div>
+     </div>
+
+ </div>  
+ <div id="women" class="  p-6 bg-white rounded-2xl  drop-shadow-lg">
+     <div>
+         <div class="flex justify-between items-center   mb-3">
+        <img src="./assets/emergency.png" alt="" class="w-9">
+       <button  class=" love-btn btn w-0 bg-white border-0"> <i class="fa-regular fa-heart"></i></button>
+      </div>
+      <p class="font-semibold text-xl">নারী ও শিশু সহায়তা</p>
+      <p>Women & Child Helpline</p>
+      <p class="text-2xl font-bold mt-3">109</p>
+      <div class="badge badge-ghost bg-[#F2F2F2] text-[#5C5C5C]">সহায়তা</div>
+      
+    <div class="flex justify-between mt-2   gap-2">
+          <button class="btn text-[#5C5C5C] w-1/2 "><i class="fa-regular fa-copy"></i>Copy</button>
+      <button class="btn btn-secondary bg-[#00A63E] text-white w-1/2 border-0 shadow-none"> <i class="fa-solid fa-phone"></i>Call</button>
+    </div>
+     </div>
+
+ </div>  
+ <div id="corruption" class="  p-6 bg-white rounded-2xl  drop-shadow-lg">
+     <div>
+         <div class="flex justify-between items-center   mb-3">
+        <img src="./assets/emergency.png" alt="" class="w-9">
+       <button class=" love-btn btn w-0 bg-white border-0"> <i class="fa-regular fa-heart"></i></button>
+      </div>
+      <p class="font-semibold text-xl">দুদক</p>
+      <p>Anti-Corruption</p>
+      <p class="text-2xl font-bold mt-3">106</p>
+      <div class="badge badge-ghost bg-[#F2F2F2] text-[#5C5C5C]">সরকারি</div>
+      
+    <div class="flex justify-between mt-2   gap-2">
+          <button class="btn text-[#5C5C5C] w-1/2 "><i class="fa-regular fa-copy"></i>Copy</button>
+      <button class="btn btn-secondary bg-[#00A63E] text-white w-1/2 border-0 shadow-none"> <i class="fa-solid fa-phone"></i>Call</button>
+    </div>
+     </div>
+
+ </div>  
+ <div id="electricity" class="  p-6 bg-white rounded-2xl drop-shadow-lg ">
+     <div>
+         <div class="flex justify-between items-center   mb-3">
+        <img src="./assets/emergency.png" alt="" class="w-9">
+       <button  class=" love-btn btn w-0 bg-white border-0"> <i class="fa-regular fa-heart"></i></button>
+      </div>
+      <p class="font-semibold text-xl">বিদ্যুৎ বিভ্রাট</p>
+      <p>Electricity Outage</p>
+      <p class="text-2xl font-bold mt-3">16216</p>
+      <div class="badge badge-ghost bg-[#F2F2F2] text-[#5C5C5C]">বিদ্যুৎ</div>
+      
+    <div class="flex justify-between mt-2   gap-2">
+          <button class="btn text-[#5C5C5C] w-1/2 "><i class="fa-regular fa-copy"></i>Copy</button>
+      <button class="btn btn-secondary bg-[#00A63E] text-white w-1/2 border-0 shadow-none"> <i class="fa-solid fa-phone"></i>Call</button>
+    </div>
+     </div>
+
+ </div>  
+ <div id="brac" class="  p-6 bg-white rounded-2xl  drop-shadow-lg">
+     <div>
+         <div class="flex justify-between items-center   mb-3">
+        <img src="./assets/emergency.png" alt="" class="w-9">
+       <button  class=" love-btn btn w-0 bg-white border-0"> <i class="fa-regular fa-heart"></i></button>
+      </div>
+      <p class="font-semibold text-xl">ব্র্যাক</p>
+      <p>Brac</p>
+      <p class="text-2xl font-bold mt-3">16445</p>
+      <div class="badge badge-ghost bg-[#F2F2F2] text-[#5C5C5C]">এনজিও</div>
+      
+    <div class="flex justify-between mt-2   gap-2">
+          <button class="btn text-[#5C5C5C] w-1/2 "><i class="fa-regular fa-copy"></i>Copy</button>
+      <button class="btn btn-secondary bg-[#00A63E] text-white w-1/2 border-0 shadow-none"> <i class="fa-solid fa-phone"></i>Call</button>
+    </div>
+     </div>
+
+ </div>  
+ <div id="railway" class="  p-6 bg-white rounded-2xl drop-shadow-lg ">
+     <div>
+         <div class="flex justify-between items-center   mb-3">
+        <img src="./assets/emergency.png" alt="" class="w-9">
+       <button class=" love-btn btn w-0 bg-white border-0"> <i class="fa-regular fa-heart"></i></button>
+      </div>
+      <p class="font-semibold text-xl">বাংলাদেশ রেলওয়ে</p>
+      <p>Bangladesh Railway</p>
+      <p class="text-2xl font-bold mt-3">163</p>
+      <div class="badge badge-ghost bg-[#F2F2F2] text-[#5C5C5C]">পরিবহন</div>
+      
+    <div class="flex justify-between mt-2   gap-2">
+          <button class="btn text-[#5C5C5C] w-1/2 "><i class="fa-regular fa-copy"></i>Copy</button>
+      <button class="btn btn-secondary bg-[#00A63E] text-white w-1/2 border-0 shadow-none"> <i class="fa-solid fa-phone"></i>Call</button>
+    </div>
+     </div>
+
+ </div>   
+
+</div>
+
+<div  class="history w-full md:w-1/4 p-5 bg-white rounded-2xl" >
+  <div class="historycall flex justify-between">
+<div class="flex items-center gap-2 ">
+<i class="fa-regular fa-clock"></i>
+<p>Call History</p>
+</div>
+<button id="clear" class="btn bg-[#00A63E]  rounded-3xl text-white">Clear</button>
+  </div>
+   <div id="historyContainer"></div>
+  
+</div>
+ </section>
+
+    <script src="./js/home.js"></script>
+</body>
+</html>

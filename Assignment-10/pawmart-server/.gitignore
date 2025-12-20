@@ -1,0 +1,4 @@
+node_modules
+.env
+.vercel
+pawmart-firebase-admin-sdk.json

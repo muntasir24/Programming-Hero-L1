@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+ @plugin "daisyui" {
+  themes: light --default;
+ }
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Base link style */
+.nav-link {
+  position: relative;
+  padding: 4px 0;
+  margin: 0 12px;
+  transition: color 0.3s ease;
+}
+
+/* The underline element */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #dc2626; /* red-600 */
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+/* Hover effect: Expand from center */
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active state: Keep underline full width */
+.nav-link-active {
+  color: #dc2626 !important;
+}
+
+.nav-link-active::after {
+  width: 100% !important;
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
