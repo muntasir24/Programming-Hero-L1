@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDj9GF5buXvSOCK3K9vk0VXOtk0Ap_G01I",
-  authDomain: "bloodsonation-a11.firebaseapp.com",
-  projectId: "bloodsonation-a11",
-  storageBucket: "bloodsonation-a11.firebasestorage.app",
-  messagingSenderId: "1061809656426",
-  appId: "1:1061809656426:web:2977d73ad4626cc400f013"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

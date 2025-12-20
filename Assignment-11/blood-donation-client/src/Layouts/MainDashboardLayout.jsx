@@ -28,8 +28,8 @@ console.log(role,roleloading);
   const allLinks = [
     { name: 'Statistics', path: '/dashboard/admin-home', icon: <LayoutDashboard size={22} />, access: ['admin', 'donor'] },
     { name: 'All Users', path: '/dashboard/all-users', icon: <Users size={22} />, access: ['admin'] },
-    { name: 'Donation Requests', path: '/dashboard/all-requests', icon: <Droplets size={22} />, access: [ 'donor'] },
-    { name: 'Content', path: '/dashboard/content-management', icon: <FileText size={22} />, access: ['admin'] },
+    { name: 'Donation Requests', path: '/dashboard/all-requests', icon: <Droplets size={22} />, access: [ 'donor','admin'] },
+    { name: 'My Request', path: '/dashboard/my-request', icon: <FileText size={22} />, access: ['admin','donor'] },
   ];
   const adminLinks = allLinks.filter(link => link.access.includes(role));
   console.log(adminLinks);
